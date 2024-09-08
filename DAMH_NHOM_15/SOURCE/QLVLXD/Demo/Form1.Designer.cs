@@ -1,4 +1,4 @@
-﻿namespace DLLS
+﻿namespace Demo
 {
     partial class Form1
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DLLS.Properties
+namespace Demo.Properties
 {
 
 
