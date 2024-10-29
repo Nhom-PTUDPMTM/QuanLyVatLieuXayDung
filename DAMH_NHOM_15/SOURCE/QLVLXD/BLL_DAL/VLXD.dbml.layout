@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 17.25" name="VLXD">
+  <DataContextMoniker Name="/VLXDDataContext" />
+  <nestedChildShapes>
+    <classShape Id="71a4aa70-25e1-464d-88fd-3e62c3fb3187" absoluteBounds="6.25, 5.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/VLXDDataContext/CungUng" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cc7914b-bbb8-4026-b1d8-621ff365f2d9" absoluteBounds="6.265, 5.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b58f733-e14f-4b45-88ee-64b42e931420" absoluteBounds="3.75, 14.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/VLXDDataContext/PhieuXuat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31c6bad9-c657-4c18-b4f7-8b76fd87c424" absoluteBounds="3.765, 15.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b9a0696-e47a-4108-8262-600c9fa902e2" absoluteBounds="9.25, 4.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/VLXDDataContext/ChiTietGiaoHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="858b0f07-a79f-4272-b7f6-083be4c73e1a" absoluteBounds="9.265, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da9d7ada-9423-4a7e-b295-2c637c468a84" absoluteBounds="6.25, 2, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/VLXDDataContext/ChiTietPhieuNhap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46a591ac-37bc-4c3e-9552-6f5cf1ae2c01" absoluteBounds="6.265, 2.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06b438b9-0016-47c3-9708-3f5f4ac23a97" absoluteBounds="6.25, 8, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/VLXDDataContext/ChiTietPhieuXuat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58bcaf28-6a1a-47b0-a5a9-fe429af742d5" absoluteBounds="6.265, 8.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5639871d-95bb-4796-ab92-7e3e20316d49" absoluteBounds="6.5, 11.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/VLXDDataContext/DonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="101f3d73-e6dc-46af-a9bd-d1779277c80e" absoluteBounds="6.515, 12.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7f32dc4-0b00-4355-bf45-fe49bbe1f8ab" absoluteBounds="6.5, 15.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/VLXDDataContext/GiaoHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d6a80f4-e484-4e1e-ab19-20565a460919" absoluteBounds="6.515, 15.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e8cac95-6b2c-40c3-87dd-f4db704c719f" absoluteBounds="3.5, 4.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/VLXDDataContext/HangHoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad150c39-bcab-42e0-9ba1-39300dffd7eb" absoluteBounds="3.515, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12f61253-cd11-4a0d-acea-4b91609bb9b7" absoluteBounds="1, 14.625, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/VLXDDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bcc8079-5a64-4a41-a27e-566c8eb8c8f1" absoluteBounds="1.0150000000000001, 15.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38a7ae9c-8378-4ef6-a189-eb1691dadb01" absoluteBounds="0.75, 5.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/VLXDDataContext/LoaiHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d6b08b6-f4e7-4789-ab33-6f4c42d4c48e" absoluteBounds="0.765, 5.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="829e7ea4-40ae-471e-8662-3e679cb15a52" absoluteBounds="0.75, 8.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/VLXDDataContext/NhaCC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c8318cf-f06c-46db-ba98-faf889d7522b" absoluteBounds="0.765, 9.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c538da2-3469-4d50-90e5-06be8080d968" absoluteBounds="0.75, 10.875, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/VLXDDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fd08b8d-c05d-485f-b119-517ae88e51ab" absoluteBounds="0.765, 11.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36b0d89f-7003-4748-a27f-a25b9ff188ed" absoluteBounds="3.5, 9.875, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/VLXDDataContext/PhieuNhap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8712276c-fc32-45c6-a3db-4efc8126f4cb" absoluteBounds="3.515, 10.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.65625 : 14.875); (5.65625 : 8.88544840494792); (5.97916666666667 : 8.88544840494792 : JumpStart); (6.14583333333333 : 8.88544840494792 : JumpEnd); (6.25 : 8.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/PhieuXuat/PhieuXuat_ChiTietPhieuXuat" />
+      <nodes>
+        <classShapeMoniker Id="5b58f733-e14f-4b45-88ee-64b42e931420" />
+        <classShapeMoniker Id="06b438b9-0016-47c3-9708-3f5f4ac23a97" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.6875025 : 14.875); (5.6875025 : 12.9367496744792); (6.5 : 12.9367496744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/PhieuXuat/PhieuXuat_DonHang" />
+      <nodes>
+        <classShapeMoniker Id="5b58f733-e14f-4b45-88ee-64b42e931420" />
+        <classShapeMoniker Id="5639871d-95bb-4796-ab92-7e3e20316d49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 15.8181469726563); (10.25 : 15.8181469726563); (10.25 : 6.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/GiaoHang/GiaoHang_ChiTietGiaoHang" />
+      <nodes>
+        <classShapeMoniker Id="b7f32dc4-0b00-4355-bf45-fe49bbe1f8ab" />
+        <classShapeMoniker Id="6b9a0696-e47a-4108-8262-600c9fa902e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 15.8181469726563); (6.5 : 15.8181469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/PhieuXuat/PhieuXuat_GiaoHang" />
+      <nodes>
+        <classShapeMoniker Id="5b58f733-e14f-4b45-88ee-64b42e931420" />
+        <classShapeMoniker Id="b7f32dc4-0b00-4355-bf45-fe49bbe1f8ab" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.81814697265625); (5.97916666666667 : 5.81814697265625 : JumpStart); (6.14583333333333 : 5.81814697265625 : JumpEnd); (6.25 : 5.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/HangHoa/HangHoa_CungUng" />
+      <nodes>
+        <classShapeMoniker Id="4e8cac95-6b2c-40c3-87dd-f4db704c719f" />
+        <classShapeMoniker Id="71a4aa70-25e1-464d-88fd-3e62c3fb3187" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.70599609375); (5.97196451822917 : 6.70599609375 : JumpStart); (6.14583333333333 : 6.70599609375 : JumpEnd); (9.25 : 6.70599609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/HangHoa/HangHoa_ChiTietGiaoHang" />
+      <nodes>
+        <classShapeMoniker Id="4e8cac95-6b2c-40c3-87dd-f4db704c719f" />
+        <classShapeMoniker Id="6b9a0696-e47a-4108-8262-600c9fa902e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 4.875); (4.5 : 2.88544840494792); (6.25 : 2.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/HangHoa/HangHoa_ChiTietPhieuNhap" />
+      <nodes>
+        <classShapeMoniker Id="4e8cac95-6b2c-40c3-87dd-f4db704c719f" />
+        <classShapeMoniker Id="da9d7ada-9423-4a7e-b295-2c637c468a84" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 6.8381982421875); (4.5 : 8.41147170247396); (5.97916666666667 : 8.41147170247396 : JumpStart); (6.14583333333333 : 8.41147170247396 : JumpEnd); (6.25 : 8.41147170247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/HangHoa/HangHoa_ChiTietPhieuXuat" />
+      <nodes>
+        <classShapeMoniker Id="4e8cac95-6b2c-40c3-87dd-f4db704c719f" />
+        <classShapeMoniker Id="06b438b9-0016-47c3-9708-3f5f4ac23a97" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 15.8565991210938); (3.75 : 15.8565991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/KhachHang/KhachHang_PhieuXuat" />
+      <nodes>
+        <classShapeMoniker Id="12f61253-cd11-4a0d-acea-4b91609bb9b7" />
+        <classShapeMoniker Id="5b58f733-e14f-4b45-88ee-64b42e931420" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.90625 : 14.625); (2.90625 : 13.6290511067708); (5.54166416666667 : 13.6290511067708 : JumpStart); (5.77083583333333 : 13.6290511067708 : JumpEnd); (6.5 : 13.6290511067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/KhachHang/KhachHang_DonHang" />
+      <nodes>
+        <classShapeMoniker Id="12f61253-cd11-4a0d-acea-4b91609bb9b7" />
+        <classShapeMoniker Id="5639871d-95bb-4796-ab92-7e3e20316d49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.81814697265625); (3.5 : 5.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/LoaiHang/LoaiHang_HangHoa" />
+      <nodes>
+        <classShapeMoniker Id="38a7ae9c-8378-4ef6-a189-eb1691dadb01" />
+        <classShapeMoniker Id="4e8cac95-6b2c-40c3-87dd-f4db704c719f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.62621330413662); (3.12621330413662 : 8.25); (4.41666666666667 : 8.25 : JumpStart); (4.58333333333333 : 8.25 : JumpEnd); (5.875 : 8.25); (5.875 : 6.8862939453125); (6.00357443490112 : 6.75771951041138 : JumpStart); (6.12142556509888 : 6.63986838021362 : JumpEnd); (6.25 : 6.5112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VLXDDataContext/NhaCC/NhaCC_CungUng" />
+      <nodes>
+        <classShapeMoniker Id="829e7ea4-40ae-471e-8662-3e679cb15a52" />
+        <classShapeMoniker Id="71a4aa70-25e1-464d-88fd-3e62c3fb3187" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.4187239583333); (5.6249975 : 12.4187239583333); (5.6249975 : 14.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/NhanVien/NhanVien_PhieuXuat" />
+      <nodes>
+        <classShapeMoniker Id="2c538da2-3469-4d50-90e5-06be8080d968" />
+        <classShapeMoniker Id="5b58f733-e14f-4b45-88ee-64b42e931420" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.8765374615385); (3.125 : 10.5015374615385); (3.125 : 7.2131982421875); (4.41666666666667 : 7.2131982421875 : JumpStart); (4.58333333333333 : 7.2131982421875 : JumpEnd); (5.79166666666667 : 7.2131982421875 : JumpStart); (5.95833333333333 : 7.2131982421875 : JumpEnd); (5.97916666666667 : 7.2131982421875 : JumpStart); (6.14583333333333 : 7.2131982421875 : JumpEnd); (8.875 : 7.2131982421875); (9.25 : 6.8381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VLXDDataContext/NhanVien/NhanVien_ChiTietGiaoHang" />
+      <nodes>
+        <classShapeMoniker Id="2c538da2-3469-4d50-90e5-06be8080d968" />
+        <classShapeMoniker Id="6b9a0696-e47a-4108-8262-600c9fa902e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.93691525225361); (5.59732443490112 : 9.83959081735248 : JumpStart); (5.71517556509888 : 9.72173968715473 : JumpEnd); (6.0625 : 9.37441525225361); (6.0625 : 3.35942460742187); (6.25 : 3.35942460742187)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/PhieuNhap/PhieuNhap_ChiTietPhieuNhap" />
+      <nodes>
+        <classShapeMoniker Id="36b0d89f-7003-4748-a27f-a25b9ff188ed" />
+        <classShapeMoniker Id="da9d7ada-9423-4a7e-b295-2c637c468a84" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.28185865206831); (3.04166666666667 : 9.28185865206831 : JumpStart); (3.20833333333333 : 9.28185865206831 : JumpEnd); (4.5 : 9.28185865206831); (4.5 : 9.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/NhaCC/NhaCC_PhieuNhap" />
+      <nodes>
+        <classShapeMoniker Id="829e7ea4-40ae-471e-8662-3e679cb15a52" />
+        <classShapeMoniker Id="36b0d89f-7003-4748-a27f-a25b9ff188ed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.388620351863); (3.5 : 11.388620351863)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VLXDDataContext/NhanVien/NhanVien_PhieuNhap" />
+      <nodes>
+        <classShapeMoniker Id="2c538da2-3469-4d50-90e5-06be8080d968" />
+        <classShapeMoniker Id="36b0d89f-7003-4748-a27f-a25b9ff188ed" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
