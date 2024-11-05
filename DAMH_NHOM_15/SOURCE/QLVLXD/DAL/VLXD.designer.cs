@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BLL_DAL
+namespace DAL
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -72,7 +72,7 @@ namespace BLL_DAL
     #endregion
 		
 		public VLXDDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QLVLXDConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QLVLXDConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

@@ -314,6 +314,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNhapHang";
             this.Text = "frmNhapHang";
+            this.Load += new System.EventHandler(this.frmNhapHang_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTPhieuNhap)).EndInit();
             this.groupBox2.ResumeLayout(false);
