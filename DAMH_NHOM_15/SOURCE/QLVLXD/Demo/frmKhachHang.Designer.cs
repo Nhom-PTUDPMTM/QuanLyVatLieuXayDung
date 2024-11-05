@@ -44,12 +44,12 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.cboLoaiKH = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.txtLoaiKH = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,7 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.Size = new System.Drawing.Size(906, 324);
             this.dgvData.TabIndex = 0;
+            this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
             // 
             // label4
             // 
@@ -190,14 +191,6 @@
             this.dtpNgaySinh.Size = new System.Drawing.Size(278, 20);
             this.dtpNgaySinh.TabIndex = 24;
             // 
-            // cboLoaiKH
-            // 
-            this.cboLoaiKH.FormattingEnabled = true;
-            this.cboLoaiKH.Location = new System.Drawing.Point(584, 130);
-            this.cboLoaiKH.Name = "cboLoaiKH";
-            this.cboLoaiKH.Size = new System.Drawing.Size(278, 21);
-            this.cboLoaiKH.TabIndex = 25;
-            // 
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Arial", 12F);
@@ -248,17 +241,24 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
+            // txtLoaiKH
+            // 
+            this.txtLoaiKH.Location = new System.Drawing.Point(584, 131);
+            this.txtLoaiKH.Name = "txtLoaiKH";
+            this.txtLoaiKH.Size = new System.Drawing.Size(278, 20);
+            this.txtLoaiKH.TabIndex = 31;
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 579);
+            this.Controls.Add(this.txtLoaiKH);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.cboLoaiKH);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtSDT);
@@ -277,6 +277,7 @@
             this.Controls.Add(this.dgvData);
             this.Name = "frmKhachHang";
             this.Text = "frmKhachHang";
+            this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -301,11 +302,11 @@
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.ComboBox cboLoaiKH;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.TextBox txtLoaiKH;
     }
 }
