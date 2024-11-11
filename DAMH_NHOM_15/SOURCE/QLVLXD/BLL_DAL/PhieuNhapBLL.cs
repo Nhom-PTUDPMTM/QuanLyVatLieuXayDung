@@ -10,7 +10,11 @@ namespace BLL_DAL
 {
     public class PhieuNhapBLL
     {
-        VLXDDataContext vlxd = new VLXDDataContext();
+        private VLXDDataContext vlxd;
+        public PhieuNhapBLL()
+        {
+            vlxd = new VLXDDataContext();
+        }
         public DataTable getAll()
         {
             DataTable dt = new DataTable();
@@ -60,38 +64,24 @@ namespace BLL_DAL
             }
             return dt;
         }
-        public PhieuNhap getByCode(string code)
-        {
-            return vlxd.PhieuNhaps.Where(t => t.MaHDNhap == code).FirstOrDefault();
+        public PhieuNhap getByCode(string code) 
+        { 
+            return vlxd.PhieuNhaps.Where(t => t.MaHDNhap == code).FirstOrDefault(); 
         }
-        public bool updatePhieuNhap(string code, PhieuNhap newPN)
+        public bool updatePhieuNhap(PhieuNhap newPN)
         {
-            bool b = false;
-            if (code != null)
+            try
             {
-                if (newPN != null)
-                {
-                    try
-                    {
-                        PhieuNhap oldPN = getByCode(code);
-                        if (oldPN != null)
-                        {
-                            oldPN.NgayNhap = newPN.NgayNhap != null ? newPN.NgayNhap : oldPN.NgayNhap;
-                            oldPN.MaNCC = newPN.MaNCC != null ? newPN.MaNCC : oldPN.MaNCC;
-                            oldPN.MaNV = newPN.MaNV != null ? newPN.MaNV : oldPN.MaNV;
-                            oldPN.ThanhTien = newPN.ThanhTien != null ? newPN.ThanhTien : oldPN.ThanhTien;
-                            oldPN.TinhTrang = newPN.TinhTrang != null ? newPN.TinhTrang : oldPN.TinhTrang;
-                            b = true;
-                        }
-                    }
-                    catch
-                    {
-                        b = false;
-                    }
-                }
+                string query = string.Format("update PhieuNhap set MaNCC = '{1}' , ThanhTien = {2}, TinhTrang = N'{3}' where MaHDNhap = '{0}'", newPN.MaHDNhap, newPN.MaNCC, newPN.ThanhTien, newPN.TinhTrang);
+                int result = DataProvider.Instance.executeNonQuery(query);
+                return result > 0;
             }
-            return b;
+            catch (Exception)
+            {
+                return false;
+            }
         }
+
         public bool addItem(PhieuNhap a)
         {
             bool b = false;
