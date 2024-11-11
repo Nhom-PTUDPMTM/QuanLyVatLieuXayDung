@@ -3368,7 +3368,7 @@ namespace DAL
 				{
 					if (this._NhaCC.HasLoadedOrAssignedValue)
 					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+						this._MaNCC = null;
 					}
 					this.OnMaNCCChanging(value);
 					this.SendPropertyChanging();

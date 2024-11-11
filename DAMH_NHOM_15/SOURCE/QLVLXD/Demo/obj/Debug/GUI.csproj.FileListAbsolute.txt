@@ -57,6 +57,7 @@ D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\o
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\GUI.csproj.Up2Date
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.exe
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.pdb
+<<<<<<< HEAD
 G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\LdaNative.dll
 G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\CpuMathNative.dll
 G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\Demo.exe.config
@@ -122,3 +123,8 @@ G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\
 G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.exe
 G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.pdb
 G:\Download\PTUD\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmXuatHang.resources
+=======
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\DAL.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\DAL.pdb
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\DAL.dll.config
+>>>>>>> main

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCTPhieuNhap = new System.Windows.Forms.DataGridView();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.cboNhaCungCap = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.chuotPhai = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTPhieuNhap)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,6 +86,7 @@
             this.dgvCTPhieuNhap.RowHeadersWidth = 62;
             this.dgvCTPhieuNhap.Size = new System.Drawing.Size(1094, 288);
             this.dgvCTPhieuNhap.TabIndex = 20;
+            this.dgvCTPhieuNhap.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPhieuNhap_CellEndEdit);
             // 
             // btnLuu
             // 
@@ -94,6 +97,7 @@
             this.btnLuu.TabIndex = 19;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // groupBox2
             // 
@@ -132,6 +136,7 @@
             this.btnInPhieu.TabIndex = 19;
             this.btnInPhieu.Text = "In phiếu";
             this.btnInPhieu.UseVisualStyleBackColor = true;
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // btnHuyPhieuNhap
             // 
@@ -142,6 +147,7 @@
             this.btnHuyPhieuNhap.TabIndex = 18;
             this.btnHuyPhieuNhap.Text = "Hủy phiếu nhập";
             this.btnHuyPhieuNhap.UseVisualStyleBackColor = true;
+            this.btnHuyPhieuNhap.Click += new System.EventHandler(this.btnHuyPhieuNhap_Click);
             // 
             // btnLuuPhieuNhap
             // 
@@ -152,6 +158,7 @@
             this.btnLuuPhieuNhap.TabIndex = 17;
             this.btnLuuPhieuNhap.Text = "Lưu phiếu nhập";
             this.btnLuuPhieuNhap.UseVisualStyleBackColor = true;
+            this.btnLuuPhieuNhap.Click += new System.EventHandler(this.btnLuuPhieuNhap_Click);
             // 
             // btnTaoMoi
             // 
@@ -162,6 +169,7 @@
             this.btnTaoMoi.TabIndex = 16;
             this.btnTaoMoi.Text = "Tạo mới";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
             // dgvPhieuNhap
             // 
@@ -172,6 +180,7 @@
             this.dgvPhieuNhap.RowHeadersWidth = 62;
             this.dgvPhieuNhap.Size = new System.Drawing.Size(1094, 263);
             this.dgvPhieuNhap.TabIndex = 15;
+            this.dgvPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuNhap_CellClick);
             // 
             // txtThanhTien
             // 
@@ -239,6 +248,7 @@
             this.btnLoc.TabIndex = 8;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // dtpEnd
             // 
@@ -302,6 +312,7 @@
             this.btnThemSanPham.TabIndex = 1;
             this.btnThemSanPham.Text = ">>";
             this.btnThemSanPham.UseVisualStyleBackColor = true;
+            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
             // 
             // dgvSanPham
             // 
@@ -321,6 +332,7 @@
             this.cboNhaCungCap.Name = "cboNhaCungCap";
             this.cboNhaCungCap.Size = new System.Drawing.Size(282, 28);
             this.cboNhaCungCap.TabIndex = 11;
+            this.cboNhaCungCap.SelectedIndexChanged += new System.EventHandler(this.cboNhaCungCap_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -332,6 +344,11 @@
             this.label1.Size = new System.Drawing.Size(163, 27);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nhà cung cấp";
+            // 
+            // chuotPhai
+            // 
+            this.chuotPhai.Name = "chuotPhai";
+            this.chuotPhai.Size = new System.Drawing.Size(181, 26);
             // 
             // frmNhapHang
             // 
@@ -386,5 +403,6 @@
         private System.Windows.Forms.DataGridView dgvSanPham;
         private System.Windows.Forms.ComboBox cboNhaCungCap;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip chuotPhai;
     }
 }
