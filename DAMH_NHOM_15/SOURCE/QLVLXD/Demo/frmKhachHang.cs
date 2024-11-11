@@ -22,9 +22,9 @@ namespace Demo
 
         public void reLoad()
         {
-            dgvData.Rows.Clear();
-            DataTable dt = kh.getAllKH();
-            dgvData.DataSource = dt;
+            //dgvData.Rows.Clear();
+            //DataTable dt = kh.getAllKH();
+            //dgvData.DataSource = dt;
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)
