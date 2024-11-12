@@ -72,7 +72,7 @@ namespace DAL
     #endregion
 		
 		public VLXDDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QLVLXDConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QLVLXDConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -3368,7 +3368,7 @@ namespace DAL
 				{
 					if (this._NhaCC.HasLoadedOrAssignedValue)
 					{
-						this._MaNCC = null;
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
 					this.OnMaNCCChanging(value);
 					this.SendPropertyChanging();

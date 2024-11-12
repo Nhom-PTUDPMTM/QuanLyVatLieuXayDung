@@ -16,7 +16,11 @@ namespace Demo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new frmNhanVien());
+=======
+            Application.Run(new frmHangHoa());
+>>>>>>> Stashed changes
         }
     }
 }
