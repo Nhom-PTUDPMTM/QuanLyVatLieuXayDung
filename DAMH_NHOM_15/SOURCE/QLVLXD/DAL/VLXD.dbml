@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLVLXD" Class="VLXDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=BRAVO15\SQLEXPRESS;Initial Catalog=QLVLXD;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLVLXDConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=QuangMinh;Initial Catalog=QLVLXD;Integrated Security=True;Encrypt=False" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLVLXDConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CungUng" Member="CungUngs">
     <Type Name="CungUng">
       <Column Name="MaNCC" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

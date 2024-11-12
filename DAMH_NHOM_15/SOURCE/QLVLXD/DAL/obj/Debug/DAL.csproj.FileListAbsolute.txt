@@ -5,3 +5,10 @@ D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\ob
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.dll
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.pdb
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\bin\Debug\DAL.dll.config
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\bin\Debug\DAL.dll
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\bin\Debug\DAL.pdb
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.dll
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QL_VLXD_Git\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.pdb
