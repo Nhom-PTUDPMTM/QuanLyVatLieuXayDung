@@ -66,6 +66,24 @@ namespace BLL_DAL
         {
             return vlxd.HangHoas.Where(t => t.MaHH == code).FirstOrDefault();
         }
+        public bool addItem(HangHoa a)
+        {
+            bool b = false;
+            if (a != null)
+            {
+                try
+                {
+                    vlxd.HangHoas.InsertOnSubmit(a);
+                    vlxd.SubmitChanges();
+                    b = true;
+                }
+                catch
+                {
+                    b = false;
+                }
+            }
+            return b;
+        }
         public bool updateSanPham(string code, HangHoa a)
         {
             bool b = false;

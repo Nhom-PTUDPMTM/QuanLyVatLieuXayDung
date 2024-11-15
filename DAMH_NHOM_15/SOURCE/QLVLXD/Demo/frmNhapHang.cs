@@ -166,7 +166,13 @@ namespace Demo
             DataTable dt2 = phieunhapBLL.getAll();
             int dem = dt2.Rows.Count;
             pn.TinhTrang = "Chưa xác nhận";
-            pn.MaHDNhap = "PN" + (dem + 1).ToString("D3");
+            string ma = "PN" + (dem + 1).ToString("D3");
+            while (phieunhapBLL.getByCode(ma) != null)
+            {
+                dem++;
+                ma = "PN" + (dem + 1).ToString("D3");
+            }
+            pn.MaHDNhap = ma;
             DataTable listPN = phieunhapBLL.getAll();
             DataRow newRow = listPN.NewRow();
             newRow["MaHDNhap"] = pn.MaHDNhap;
