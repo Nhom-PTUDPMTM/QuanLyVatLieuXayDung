@@ -124,7 +124,9 @@
     <Compile Include="CungUngBLL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="GiaoHangBLL.cs" />
+    <Compile Include="HangHoaBLL.cs" />
     <Compile Include="KhachHangBLL.cs" />
+    <Compile Include="LoaiHangBLL.cs" />
     <Compile Include="NhaCungCapBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="PhieuNhapBLL.cs" />

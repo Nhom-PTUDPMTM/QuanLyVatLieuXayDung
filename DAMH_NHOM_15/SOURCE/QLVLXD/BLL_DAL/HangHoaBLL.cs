@@ -1,53 +1,23 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Numerics.Tensors;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 
 namespace BLL_DAL
 {
-    public class NhaCungCapBLL
+    public class HangHoaBLL
     {
         VLXDDataContext vlxd = new VLXDDataContext();
-
-        public DataTable getCodeAndName()
-        {
-            DataTable dt = new DataTable();
-            var kq = from tcs in vlxd.NhaCCs
-                     select new
-                     {
-                         MaNCC = tcs.MaNCC,
-                         TenNCC = tcs.TenNCC
-                     };
-            if (kq.Any())
-            {
-                var firstItem = kq.First();
-                foreach (var prop in firstItem.GetType().GetProperties())
-                {
-                    dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-                }
-                foreach (var item in kq)
-                {
-                    var row = dt.NewRow();
-                    foreach (var prop in item.GetType().GetProperties())
-                    {
-                        row[prop.Name] = prop.GetValue(item, null) ?? DBNull.Value;
-                    }
-                    dt.Rows.Add(row);
-                }
-            }
-            return dt;
-        }
 
         public DataTable getAllByCode(string code)
         {
             DataTable dt = new DataTable();
-            var kq = from tcs in vlxd.NhaCCs
-                     where tcs.MaNCC == code
-                     select tcs;
+            var kq = from hh in vlxd.HangHoas
+                     where hh.MaLoai == code
+                     select hh;
             if (kq.Any())
             {
                 var firstItem = kq.First();
@@ -70,16 +40,29 @@ namespace BLL_DAL
 
         public DataTable getAll()
         {
-            var kq = from tcs in vlxd.NhaCCs select tcs;
+            var kq = from hh in vlxd.HangHoas
+                     join lh in vlxd.LoaiHangs on hh.MaLoai equals lh.MaLoai
+                     select new
+                     {
+                         hh.MaHH,
+                         hh.TenHH,
+                         hh.MaLoai,
+                         hh.DonVi,
+                         hh.DonGia,
+                         hh.SoLuongTon,
+                         TenLoai = lh.TenLoai
+                     };
 
             if (!kq.Any()) return null;
 
             var dt = new DataTable();
-            foreach (var prop in typeof(NhaCC).GetProperties())
+            // Tạo cột cho DataTable dựa trên các thuộc tính của kết quả phép join
+            foreach (var prop in kq.First().GetType().GetProperties())
             {
                 dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
             }
 
+            // Thêm các hàng vào DataTable
             foreach (var item in kq)
             {
                 var row = dt.NewRow();
@@ -92,28 +75,27 @@ namespace BLL_DAL
             return dt;
         }
 
-
-        public NhaCC getByCode(string code)
+        public HangHoa getByCode(string code)
         {
-            return vlxd.NhaCCs.Where(t => t.MaNCC == code).FirstOrDefault();
+            return vlxd.HangHoas.Where(t => t.MaHH == code).FirstOrDefault();
         }
 
-        public string GetNextMaNCC()
+        public string GetNextMaHangHoa()
         {
-            // Lấy giá trị MaNCC lớn nhất hiện tại trong danh sách nhà cung cấp
-            var maxMaNCC = vlxd.NhaCCs
-                .OrderByDescending(t => t.MaNCC)
-                .FirstOrDefault()?.MaNCC;
+            // Lấy giá trị MaHH lớn nhất hiện tại trong danh sách nhà cung cấp
+            var maxMaHH = vlxd.HangHoas
+                .OrderByDescending(t => t.MaHH)
+                .FirstOrDefault()?.MaHH;
 
-            if (maxMaNCC == null)
+            if (maxMaHH == null)
             {
-                // Nếu không có mã nhà cung cấp nào, trả về mã mặc định
-                return "NCC001";
+                // Nếu không có mã hh nào, trả về mã mặc định
+                return "HH001";
             }
 
-            //Dạng Mã Nhà Cung Cấp là 'NCC001'
-            string prefix = new string(maxMaNCC.TakeWhile(char.IsLetter).ToArray());
-            string numberPart = maxMaNCC.Substring(prefix.Length);
+            //Dạng Mã Loại Hàng là 'HH001'
+            string prefix = new string(maxMaHH.TakeWhile(char.IsLetter).ToArray());
+            string numberPart = maxMaHH.Substring(prefix.Length);
 
             if (int.TryParse(numberPart, out int number))
             {
@@ -122,18 +104,24 @@ namespace BLL_DAL
                 return $"{prefix}{number:D3}"; // D3 định dạng số có 3 chữ số
             }
 
-            throw new InvalidOperationException("Invalid MaNCC format.");
+            throw new InvalidOperationException("Invalid MaHH format.");
         }
 
-
-        public bool addItemNCC(NhaCC a)
+        public List<string> getMaLoaiList()
+        {
+            return vlxd.LoaiHangs
+                .Select(lh => lh.MaLoai)
+                .Distinct() // Đảm bảo không trùng lặp giá trị
+                .ToList();
+        }
+        public bool addItemHangHoa(HangHoa a)
         {
             bool b = false;
             if (a != null)
             {
                 try
                 {
-                    vlxd.NhaCCs.InsertOnSubmit(a);
+                    vlxd.HangHoas.InsertOnSubmit(a);
                     vlxd.SubmitChanges();
                     b = true;
                 }
@@ -145,16 +133,20 @@ namespace BLL_DAL
             return b;
         }
 
-        public bool updateItemNCC(NhaCC a, NhaCC d)
+        public bool updateItemHangHoa(HangHoa a, HangHoa d)
         {
             try
             {
                 // Câu truy vấn SQL để cập nhật thông tin nhà cung cấp
-                string query = string.Format("UPDATE NhaCC SET TenNCC = '{1}', DiaChi = '{2}', SDT = '{3}' WHERE MaNCC = '{0}'",
-                                            a.MaNCC,
-                                            d.TenNCC != null && d.TenNCC != "" ? d.TenNCC : a.TenNCC, // Kiểm tra nếu d.TenNCC có giá trị thì cập nhật, nếu không dùng a.TenNCC
-                                            d.DiaChi != null && d.DiaChi != "" ? d.DiaChi : a.DiaChi, // Tương tự cho DiaChi
-                                            d.SDT != null && d.SDT != "" ? d.SDT : a.SDT); // Tương tự cho SDT
+                string query = string.Format("UPDATE HangHoa SET TenHH = '{1}', MaLoai = '{2}', DonVi = '{3}'" +
+                                            " , DonGia = '{4}', SoLuongTon = '{5}' " +
+                                            " WHERE MaHH = '{0}'",
+                                            a.MaHH,
+                                            d.TenHH != null && d.TenHH != "" ? d.TenHH : a.TenHH,
+                                            d.MaLoai != null && d.MaLoai != "" ? d.MaLoai : a.MaLoai,
+                                            d.DonVi != null && d.DonVi != "" ? d.DonVi : a.DonVi,
+                                            d.DonGia != null && d.DonGia != 0 ? d.DonGia : a.DonGia,
+                                            d.SoLuongTon != null && d.SoLuongTon != 0 ? d.SoLuongTon : a.SoLuongTon);
 
                 // Thực thi câu truy vấn
                 int result = DataProvider.Instance.executeNonQuery(query);
@@ -172,14 +164,14 @@ namespace BLL_DAL
 
 
 
-        public bool deleteItemNCC(NhaCC a)
+        public bool deleteItemHanghoa(HangHoa a)
         {
             bool b = false;
             if (a != null)
             {
                 try
                 {
-                    vlxd.NhaCCs.DeleteOnSubmit(a);
+                    vlxd.HangHoas.DeleteOnSubmit(a);
                     vlxd.SubmitChanges();
                     b = true;
                 }
@@ -190,6 +182,5 @@ namespace BLL_DAL
             }
             return b;
         }
-
     }
 }
