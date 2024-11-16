@@ -76,16 +76,18 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết phiếu nhập";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dgvCTPhieuNhap
             // 
             this.dgvCTPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTPhieuNhap.Location = new System.Drawing.Point(15, 95);
+            this.dgvCTPhieuNhap.Location = new System.Drawing.Point(18, 92);
             this.dgvCTPhieuNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCTPhieuNhap.Name = "dgvCTPhieuNhap";
             this.dgvCTPhieuNhap.RowHeadersWidth = 62;
             this.dgvCTPhieuNhap.Size = new System.Drawing.Size(1094, 288);
             this.dgvCTPhieuNhap.TabIndex = 20;
+            this.dgvCTPhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPhieuNhap_CellContentClick);
             this.dgvCTPhieuNhap.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPhieuNhap_CellEndEdit);
             // 
             // btnLuu
@@ -297,15 +299,16 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(442, 823);
+            this.groupBox1.Size = new System.Drawing.Size(444, 624);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnThemSanPham
             // 
             this.btnThemSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemSanPham.Location = new System.Drawing.Point(348, 757);
+            this.btnThemSanPham.Location = new System.Drawing.Point(334, 538);
             this.btnThemSanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThemSanPham.Name = "btnThemSanPham";
             this.btnThemSanPham.Size = new System.Drawing.Size(86, 57);
@@ -321,7 +324,7 @@
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 62;
-            this.dgvSanPham.Size = new System.Drawing.Size(424, 712);
+            this.dgvSanPham.Size = new System.Drawing.Size(424, 481);
             this.dgvSanPham.TabIndex = 0;
             // 
             // cboNhaCungCap
@@ -347,8 +350,9 @@
             // 
             // chuotPhai
             // 
+            this.chuotPhai.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.chuotPhai.Name = "chuotPhai";
-            this.chuotPhai.Size = new System.Drawing.Size(181, 26);
+            this.chuotPhai.Size = new System.Drawing.Size(61, 4);
             // 
             // frmNhapHang
             // 

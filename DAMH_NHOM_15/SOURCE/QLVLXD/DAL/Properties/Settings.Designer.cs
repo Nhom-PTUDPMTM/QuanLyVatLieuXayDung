@@ -33,5 +33,16 @@ namespace DAL.Properties {
                 return ((string)(this["QLVLXDConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-3B5QUPD1;Initial Catalog=QLVLXD;Integrated Security=True;Trust" +
+            "ServerCertificate=True")]
+        public string QLVLXDConnectionString1 {
+            get {
+                return ((string)(this["QLVLXDConnectionString1"]));
+            }
+        }
     }
 }

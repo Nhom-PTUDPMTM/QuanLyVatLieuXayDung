@@ -14,7 +14,7 @@ namespace Demo
     public partial class frmKhachHang : Form
     {
         KhachHangBLL kh = new KhachHangBLL();
-        bool isAdd = false, isUpdate = false;
+//bool isAdd = false, isUpdate = false;
         public frmKhachHang()
         {
             InitializeComponent();

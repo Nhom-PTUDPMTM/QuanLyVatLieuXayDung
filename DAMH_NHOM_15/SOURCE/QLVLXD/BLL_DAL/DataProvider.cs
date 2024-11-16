@@ -20,7 +20,7 @@ namespace BLL_DAL
 
         private DataProvider() { }
 
-        private string connectionString = "Data Source=BRAVO15\\SQLEXPRESS;Initial Catalog=QLVLXD;Integrated Security=True";
+        private string connectionString = "Data Source=LAPTOP-3B5QUPD1;Initial Catalog=QLVLXD;Integrated Security=True";
 
         public DataTable executeQuery(string query, object[] paras = null)
         {

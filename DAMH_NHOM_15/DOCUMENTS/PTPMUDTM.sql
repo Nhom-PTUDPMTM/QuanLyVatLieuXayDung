@@ -223,6 +223,7 @@ VALUES
 ('PX004', 'KH004', 'NV004', '2024-10-13', 'Pending', 200.0),
 ('PX005', 'KH005', 'NV005', '2024-10-14', 'Completed', 700.0);
 
+
 INSERT INTO ChiTietPhieuXuat (MaHH, MaHDXuat, SLXuat, DonGiaXuat, ThanhTien) 
 VALUES 
 ('HH001', 'PX001', 10, 50.0, 500.0),
