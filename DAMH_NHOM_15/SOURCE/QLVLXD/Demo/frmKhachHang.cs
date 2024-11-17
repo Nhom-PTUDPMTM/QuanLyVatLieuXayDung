@@ -1,4 +1,8 @@
 ﻿using BLL_DAL;
+using DAL;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using MetroSet_UI.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,20 +15,30 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmKhachHang : Form
+    public partial class frmKhachHang : MetroSet_UI.Forms.MetroSetForm
     {
-        KhachHangBLL kh = new KhachHangBLL();
+        KhachHangBLL khachHangBLL = new KhachHangBLL();
         bool isAdd = false, isUpdate = false;
         public frmKhachHang()
         {
             InitializeComponent();
+            btnHuy.Enabled = btnLuu.Enabled = txtMaKH.Enabled = false;
         }
 
         public void reLoad()
         {
-            //dgvData.Rows.Clear();
-            //DataTable dt = kh.getAllKH();
-            //dgvData.DataSource = dt;
+            dgvData.DataSource = null;
+            DataTable dt = khachHangBLL.getAll();
+            dgvData.DataSource = dt;
+            gridView1.Columns[2].Visible = false;
+            gridView1.OptionsBehavior.Editable = false;
+            var column = gridView1.Columns[3];
+            gridView1.Columns[3].GroupIndex = 0;
+            List<string> list = new List<string>();
+            list.Add("Retail");
+            list.Add("Wholesale");
+            cboLoaiKH.Properties.Items.Clear();
+            cboLoaiKH.Properties.Items.AddRange(list.ToArray());
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)
@@ -32,20 +46,117 @@ namespace Demo
             reLoad();
         }
 
-        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow r = dgvData.Rows[e.RowIndex];
-            //    txtMaKH.Text = r.Cells[0].Value.ToString();
-            //    txtTenKH.Text = r.Cells[1].Value.ToString();
-            //    txtMatKhau.Text = r.Cells[2].Value.ToString();
-            //    txtGioiTinh.Text = r.Cells[3].Value.ToString();
-            //    dtpNgaySinh.Text = r.Cells[4].Value.ToString();
-            //    txtDiaChi.Text = r.Cells[5].Value.ToString();
-            //    txtSDT.Text = r.Cells[6].Value.ToString();
-            //    txtLoaiKH.Text = r.Cells[7].Value.ToString();
-            //}
+            isAdd = true;
+            btnLuu.Enabled = !btnLuu.Enabled;
+            btnHuy.Enabled = !btnHuy.Enabled;
+            int sl = khachHangBLL.getAll().Rows.Count + 1;
+            string ma = "KH" + sl.ToString("D3");
+            while (khachHangBLL.getByCode(ma) != null)
+            {
+                sl++;
+                ma = "KH" + sl.ToString("D3");
+            }
+            txtMaKH.Text = ma;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult result = CustomMessageBox.ShowYesNo("Bạn có muốn xóa khách hàng này không?", "Xác nhận xóa");
+            if (result == DialogResult.Yes)
+            {
+                if (khachHangBLL.deleteItem(txtMaKH.Text))
+                {
+                    reLoad();
+                    CustomMessageBox.Show("Đã xóa thành công !!");
+                }
+                else
+                    CustomMessageBox.Show("Lỗi khi xóa dữ liệu !!");
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            isUpdate = true;
+            btnLuu.Enabled = !btnLuu.Enabled;
+            btnHuy.Enabled = !btnHuy.Enabled;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (isAdd)
+            {
+                isAdd = false;
+                KhachHang them = new KhachHang()
+                {
+                    MaKH = txtMaKH.Text,
+                    TenKH = txtTenKH.Text,
+                    MatKhau = "",
+                    GioiTinh = txtGioiTinh.Text,
+                    NgaySinh = dtpNgaySinh.DateTime.Date,
+                    DiaChi = txtDiaChi.Text,
+                    SDT = txtSDT.Text,
+                    LoaiKH = cboLoaiKH.Text == "Không có" ? null : cboLoaiKH.Text.ToString()
+                };
+                if (khachHangBLL.addItem(them))
+                {
+                    reLoad();
+                    CustomMessageBox.Show("Đã thêm thành công !!");
+                }
+                else
+                    CustomMessageBox.Show("Lỗi khi thêm dữ liệu !!");
+            }
+            else if (isUpdate)
+            {
+                isUpdate = false;
+                KhachHang sua = new KhachHang()
+                {
+                    MaKH = txtMaKH.Text,
+                    TenKH = txtTenKH.Text,
+                    MatKhau = "",
+                    GioiTinh = txtGioiTinh.Text,
+                    NgaySinh = dtpNgaySinh.DateTime.Date,
+                    DiaChi = txtDiaChi.Text,
+                    SDT = txtSDT.Text,
+                    LoaiKH = cboLoaiKH.Text == "Không có" ? null : cboLoaiKH.Text.ToString()
+                };
+                if (khachHangBLL.updateItem(sua))
+                {
+                    reLoad();
+                    CustomMessageBox.Show("Đã sửa thành công !!");
+                }
+                else
+                    CustomMessageBox.Show("Lỗi khi sửa dữ liệu !!");
+            }
+            btnLuu.Enabled = !btnLuu.Enabled;
+            btnHuy.Enabled = !btnHuy.Enabled;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = !btnLuu.Enabled;
+            btnHuy.Enabled = !btnHuy.Enabled;
+            isAdd = isUpdate = false;
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle >= 0)
+            {
+                GridView view = sender as GridView;
+                var r = view.GetDataRow(e.FocusedRowHandle);
+                if (r != null)
+                {
+                    txtMaKH.Text = r[0]?.ToString();
+                    txtTenKH.Text = r[1]?.ToString();
+                    txtGioiTinh.Text = r[3]?.ToString();
+                    dtpNgaySinh.Text = r[4]?.ToString();
+                    txtDiaChi.Text = r[5]?.ToString();
+                    txtSDT.Text = r[6]?.ToString();
+                    cboLoaiKH.Text = r[7]?.ToString();
+                }
+            }
         }
     }
 }

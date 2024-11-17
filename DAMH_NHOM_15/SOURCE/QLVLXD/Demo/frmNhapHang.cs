@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmNhapHang : Form
+    public partial class frmNhapHang : MetroSet_UI.Forms.MetroSetForm
     {
         NhaCungCapBLL nccBLL = new NhaCungCapBLL();
         SanPhamBLL hanghoaBLL = new SanPhamBLL();
         PhieuNhapBLL phieunhapBLL = new PhieuNhapBLL();
         ChiTietPhieuNhapBLL CTphieunhapBLL = new ChiTietPhieuNhapBLL();
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        private string maNV = string.Empty;
         public frmNhapHang()
         {
             InitializeComponent();
@@ -26,6 +27,15 @@ namespace Demo
             ToolStripMenuItem deleteItem = new ToolStripMenuItem("Xóa");
             chuotPhai.Items.AddRange(new ToolStripItem[] { deleteItem });
             deleteItem.Click += new EventHandler(DeleteItem_Click);
+        }
+        public frmNhapHang(string maNVDN)
+        {
+            InitializeComponent();
+            btnHuyPhieuNhap.Enabled = btnLuuPhieuNhap.Enabled = btnLuu.Enabled = false;
+            ToolStripMenuItem deleteItem = new ToolStripMenuItem("Xóa");
+            chuotPhai.Items.AddRange(new ToolStripItem[] { deleteItem });
+            deleteItem.Click += new EventHandler(DeleteItem_Click);
+            maNV = maNVDN;
         }
 
         public void reLoad()
@@ -152,12 +162,11 @@ namespace Demo
             WordExport wd = new WordExport(Application.StartupPath + "\\Temp.dotx", true);
             wd.WriteFields(dic);
             wd.WriteTable(dt, 1);
-            MessageBox.Show("Xuất xong !!");
+            CustomMessageBox.Show("Xuất xong !!");
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            string maNV = "NV001";
             PhieuNhap pn = new PhieuNhap();
             pn.ThanhTien = 0;
             pn.MaNV = maNV;
@@ -166,7 +175,13 @@ namespace Demo
             DataTable dt2 = phieunhapBLL.getAll();
             int dem = dt2.Rows.Count;
             pn.TinhTrang = "Chưa xác nhận";
-            pn.MaHDNhap = "PN" + (dem + 1).ToString("D3");
+            string ma = "PN" + (dem + 1).ToString("D3");
+            while (phieunhapBLL.getByCode(ma) != null)
+            {
+                dem++;
+                ma = "PN" + (dem + 1).ToString("D3");
+            }
+            pn.MaHDNhap = ma;
             DataTable listPN = phieunhapBLL.getAll();
             DataRow newRow = listPN.NewRow();
             newRow["MaHDNhap"] = pn.MaHDNhap;
@@ -193,7 +208,6 @@ namespace Demo
                 PhieuNhap kq = phieunhapBLL.getByCode(maPhieuNhap);
                 if (kq == null)
                 {
-                    string maNV = "NV001";
                     string maNCC = r.Cells[1].Value?.ToString();
                     DateTime ngayNhap = r.Cells[3].Value != null && DateTime.TryParse(r.Cells[3].Value.ToString(), out DateTime parsedNgayNhap)
                                         ? parsedNgayNhap
@@ -212,7 +226,7 @@ namespace Demo
                     };
                     if (!phieunhapBLL.addItem(pn))
                     {
-                        MessageBox.Show("Không thể lưu phiếu nhập: " + maPhieuNhap);
+                        CustomMessageBox.Show("Không thể lưu phiếu nhập: " + maPhieuNhap);
                     }
                 }
             }
@@ -250,7 +264,7 @@ namespace Demo
                         !double.TryParse(r.Cells[3].Value?.ToString(), out donGia) ||
                         !int.TryParse(r.Cells[2].Value?.ToString(), out soLuong))
                     {
-                        MessageBox.Show("Dữ liệu không hợp lệ! Vui lòng kiểm tra lại các trường dữ liệu.");
+                        CustomMessageBox.Show("Dữ liệu không hợp lệ! Vui lòng kiểm tra lại các trường dữ liệu.");
                         continue;
                     }
                     ChiTietPhieuNhap ct = CTphieunhapBLL.getByCodeProduct(maPhieuNhap, maSanPham);
@@ -278,7 +292,7 @@ namespace Demo
                         }
                         else
                         {
-                            MessageBox.Show("Mã phiếu nhập không được để trống. Vui lòng nhập dữ liệu hợp lệ.");
+                            CustomMessageBox.Show("Mã phiếu nhập không được để trống. Vui lòng nhập dữ liệu hợp lệ.");
                         }
                     }
                     HangHoa sp = hanghoaBLL.getSanPhamByCode(maSanPham);
@@ -296,13 +310,13 @@ namespace Demo
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy phiếu nhập với mã: " + txtMaPhieuNhap.Text);
+                    CustomMessageBox.Show("Không tìm thấy phiếu nhập với mã: " + txtMaPhieuNhap.Text);
                 }
                 phieunhapBLL.updatePhieuNhap(pn);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                CustomMessageBox.Show("An error occurred: " + ex.Message);
             }
             finally
             {
@@ -335,7 +349,7 @@ namespace Demo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    CustomMessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
         }
@@ -384,7 +398,7 @@ namespace Demo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
+                    CustomMessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
                 }
             }
         }
@@ -415,7 +429,7 @@ namespace Demo
                         }
                     }
                 }
-                MessageBox.Show("Đã sản phẩm khỏi danh sách sản phẩm");
+                CustomMessageBox.Show("Đã sản phẩm khỏi danh sách sản phẩm");
             }
         }
     }
