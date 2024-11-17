@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmNhaCungCap : Form
+    public partial class frmNhaCungCap : MetroSet_UI.Forms.MetroSetForm
     {
         NhaCungCapBLL ncc = new NhaCungCapBLL();
         bool isAdd = false, isUpdate = false;
@@ -61,7 +61,7 @@ namespace Demo
         private void btnXoa_Click(object sender, EventArgs e)
         {
             // Hiển thị MessageBox xác nhận
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa NCC này?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CustomMessageBox.ShowYesNo("Bạn có chắc chắn muốn xóa NCC này?", "Xóa");
 
             // Kiểm tra kết quả trả về từ MessageBox
             if (result == DialogResult.Yes)
@@ -73,17 +73,17 @@ namespace Demo
 
                     ncc.deleteItemNCC(nhaCC);
 
-                    MessageBox.Show("Xóa NCC thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Xóa NCC thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy NCC để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Không tìm thấy NCC để xóa.", "Lỗi");
                 }
             }
             else
             {
-                MessageBox.Show("Hủy thao tác xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CustomMessageBox.Show("Hủy thao tác xóa.", "Thông báo");
             }
         }
 
@@ -104,7 +104,7 @@ namespace Demo
                 if (string.IsNullOrEmpty(txtMaNCC.Text) || string.IsNullOrEmpty(txtTenNCC.Text) ||
                     string.IsNullOrEmpty(txtDiaChiNCC.Text) || string.IsNullOrEmpty(txtSDTNCC.Text))
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    CustomMessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                     return;
                 }
 
@@ -120,12 +120,12 @@ namespace Demo
                 // Gọi phương thức thêm nhà cung cấp
                 if (ncc.addItemNCC(nhaCC))
                 {
-                    MessageBox.Show("Thêm NCC thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Thêm NCC thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi thêm NCC.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Lỗi khi thêm NCC.", "Lỗi");
                 }
             }
             else if (isUpdate)
@@ -134,7 +134,7 @@ namespace Demo
                 if (string.IsNullOrEmpty(txtMaNCC.Text) || string.IsNullOrEmpty(txtTenNCC.Text) ||
                     string.IsNullOrEmpty(txtDiaChiNCC.Text) || string.IsNullOrEmpty(txtSDTNCC.Text))
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    CustomMessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                     return;
                 }
 
@@ -158,13 +158,13 @@ namespace Demo
                 // Gọi phương thức sửa nhà cung cấp, truyền cả đối tượng cũ và mới
                 if (ncc.updateItemNCC(nhaCCCurrent, nhaCCNew))
                 {
-                    MessageBox.Show("Sửa NCC thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Sửa NCC thành công!", "Thành công");
                     loadData();
                     dgvDataNCC.Refresh();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi sửa NCC.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Lỗi khi sửa NCC.", "Lỗi");
                 }
             }
         }

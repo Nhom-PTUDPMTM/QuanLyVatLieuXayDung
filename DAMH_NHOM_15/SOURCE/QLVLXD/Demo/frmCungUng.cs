@@ -12,7 +12,7 @@ using DAL;
 
 namespace Demo
 {
-    public partial class frmCungUng : Form
+    public partial class frmCungUng : MetroSet_UI.Forms.MetroSetForm
     {
         SanPhamBLL sanPhamBLL = new SanPhamBLL();
         NhaCungCapBLL nhaCCBLL = new NhaCungCapBLL();
@@ -78,16 +78,16 @@ namespace Demo
 
         private void btns1_DeleteClicked(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this, "Bạn có muốn xóa sản phẩm này khỏi nhà cung ứng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            DialogResult result = CustomMessageBox.ShowYesNo("Bạn có muốn xóa sản phẩm này khỏi nhà cung ứng này không?", "Xác nhận xóa");
             if (result == DialogResult.Yes)
             {
                 if (cungUngBLL.removeItem(cboNCC.SelectedValue.ToString(), txtMaSP.Text))
                 {
                     reLoad();
-                    MessageBox.Show(this, "Đã xóa thành công !!");
+                    CustomMessageBox.Show("Đã xóa thành công !!");
                 }
                 else
-                    MessageBox.Show(this, "Lỗi khi xóa dữ liệu !!");
+                    CustomMessageBox.Show("Lỗi khi xóa dữ liệu !!");
             }
         }
 
@@ -119,10 +119,10 @@ namespace Demo
                     if (cungUngBLL.addItem(them))
                     {
                         reLoad();
-                        MessageBox.Show(this, "Đã thêm thành công !!");
+                        CustomMessageBox.Show("Đã thêm thành công !!");
                     }
                     else
-                        MessageBox.Show(this, "Lỗi khi thêm dữ liệu !!");
+                        CustomMessageBox.Show("Lỗi khi thêm dữ liệu !!");
                 }
                 catch
                 {
@@ -141,10 +141,10 @@ namespace Demo
                 if (cungUngBLL.updateItem(sua))
                 {
                     reLoad();
-                    MessageBox.Show(this, "Đã sửa thành công !!");
+                    CustomMessageBox.Show("Đã sửa thành công !!");
                 }
                 else
-                    MessageBox.Show(this, "Lỗi khi sửa dữ liệu !!");
+                    CustomMessageBox.Show("Lỗi khi sửa dữ liệu !!");
             }
             Button save = btns1.Controls.OfType<Button>().FirstOrDefault(b => b.Name == "btnSave");
             Button cancel = btns1.Controls.OfType<Button>().FirstOrDefault(b => b.Name == "btnSkip");

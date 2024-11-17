@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmHangHoa : Form
+    public partial class frmHangHoa : MetroSet_UI.Forms.MetroSetForm
     {
         HangHoaBLL hh = new HangHoaBLL();
         bool isAdd = false, isUpdate = false;
@@ -69,7 +69,7 @@ namespace Demo
         private void btnXoa_Click(object sender, EventArgs e)
         {
             // Hiển thị MessageBox xác nhận
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa hàng hóa này?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CustomMessageBox.ShowYesNo("Bạn có chắc chắn muốn xóa hàng hóa này?", "Xóa");
 
             // Kiểm tra kết quả trả về từ MessageBox
             if (result == DialogResult.Yes)
@@ -81,17 +81,17 @@ namespace Demo
 
                     hh.deleteItemHanghoa(hanghoa);
 
-                    MessageBox.Show("Xóa hàng hóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Xóa hàng hóa thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy hàng hóa để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Không tìm thấy hàng hóa để xóa.", "Lỗi");
                 }
             }
             else
             {
-                MessageBox.Show("Hủy thao tác xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CustomMessageBox.Show("Hủy thao tác xóa.", "Thông báo");
             }
         }
 
@@ -113,7 +113,7 @@ namespace Demo
                 // Kiểm tra xem các TextBox có giá trị hay không
                 if (string.IsNullOrEmpty(txtTenHH.Text) || string.IsNullOrEmpty(txtDonGia.Text) || string.IsNullOrEmpty(txtDonVi.Text) || string.IsNullOrEmpty(txtSLT.Text))
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    CustomMessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                     return;
                 }
 
@@ -131,12 +131,12 @@ namespace Demo
                 // Gọi phương thức thêm nhà cung cấp
                 if (hh.addItemHangHoa(hanghoa))
                 {
-                    MessageBox.Show("Thêm hàng hóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Thêm hàng hóa thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi thêm hàng hóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Lỗi khi thêm hàng hóa.", "Lỗi");
                 }
             }
             else if (isUpdate)
@@ -144,7 +144,7 @@ namespace Demo
                 // Kiểm tra lại các TextBox
                 if (string.IsNullOrEmpty(txtTenHH.Text) || string.IsNullOrEmpty(txtDonGia.Text) || string.IsNullOrEmpty(txtDonVi.Text) || string.IsNullOrEmpty(txtSLT.Text))
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    CustomMessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                     return;
                 }
 
@@ -172,12 +172,12 @@ namespace Demo
                 // Gọi phương thức sửa nhà cung cấp, truyền cả đối tượng cũ và mới
                 if (hh.updateItemHangHoa(hangHoaCurrent, hangHoaNew))
                 {
-                    MessageBox.Show("Sửa hàng hóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Sửa hàng hóa thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi sửa hàng hóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Lỗi khi sửa hàng hóa.", "Lỗi");
                 }
             }
         }

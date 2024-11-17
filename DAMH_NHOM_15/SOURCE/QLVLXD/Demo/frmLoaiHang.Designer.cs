@@ -40,13 +40,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgvDataLH = new System.Windows.Forms.DataGridView();
             this.cbbLH = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataLH)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnHuy.Location = new System.Drawing.Point(399, 440);
+            this.btnHuy.Location = new System.Drawing.Point(606, 569);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 33);
             this.btnHuy.TabIndex = 8;
@@ -57,7 +58,7 @@
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnLuu.Location = new System.Drawing.Point(303, 440);
+            this.btnLuu.Location = new System.Drawing.Point(510, 569);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 33);
             this.btnLuu.TabIndex = 7;
@@ -68,7 +69,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnSua.Location = new System.Drawing.Point(207, 440);
+            this.btnSua.Location = new System.Drawing.Point(414, 569);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(93, 33);
             this.btnSua.TabIndex = 6;
@@ -79,7 +80,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnXoa.Location = new System.Drawing.Point(111, 440);
+            this.btnXoa.Location = new System.Drawing.Point(318, 569);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(93, 33);
             this.btnXoa.TabIndex = 5;
@@ -90,7 +91,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnThem.Location = new System.Drawing.Point(15, 440);
+            this.btnThem.Location = new System.Drawing.Point(222, 569);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(93, 33);
             this.btnThem.TabIndex = 4;
@@ -101,24 +102,24 @@
             // txtMaLH
             // 
             this.txtMaLH.Enabled = false;
-            this.txtMaLH.Location = new System.Drawing.Point(124, 21);
+            this.txtMaLH.Location = new System.Drawing.Point(131, 135);
             this.txtMaLH.Name = "txtMaLH";
-            this.txtMaLH.Size = new System.Drawing.Size(177, 20);
+            this.txtMaLH.Size = new System.Drawing.Size(311, 27);
             this.txtMaLH.TabIndex = 1;
             // 
             // txtTenLH
             // 
             this.txtTenLH.Enabled = false;
-            this.txtTenLH.Location = new System.Drawing.Point(438, 22);
+            this.txtTenLH.Location = new System.Drawing.Point(131, 182);
             this.txtTenLH.Name = "txtTenLH";
-            this.txtTenLH.Size = new System.Drawing.Size(204, 20);
+            this.txtTenLH.Size = new System.Drawing.Size(311, 27);
             this.txtTenLH.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(664, 21);
+            this.label7.Location = new System.Drawing.Point(524, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 18);
             this.label7.TabIndex = 56;
@@ -128,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(322, 21);
+            this.label1.Location = new System.Drawing.Point(15, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 18);
             this.label1.TabIndex = 55;
@@ -138,7 +139,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Location = new System.Drawing.Point(15, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 54;
@@ -147,25 +148,39 @@
             // dgvDataLH
             // 
             this.dgvDataLH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDataLH.Location = new System.Drawing.Point(15, 82);
+            this.dgvDataLH.Location = new System.Drawing.Point(12, 230);
             this.dgvDataLH.Name = "dgvDataLH";
-            this.dgvDataLH.Size = new System.Drawing.Size(906, 324);
+            this.dgvDataLH.Size = new System.Drawing.Size(884, 324);
             this.dgvDataLH.TabIndex = 53;
             this.dgvDataLH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataLH_CellClick);
             // 
             // cbbLH
             // 
             this.cbbLH.FormattingEnabled = true;
-            this.cbbLH.Location = new System.Drawing.Point(749, 22);
+            this.cbbLH.Location = new System.Drawing.Point(609, 182);
             this.cbbLH.Name = "cbbLH";
-            this.cbbLH.Size = new System.Drawing.Size(169, 21);
+            this.cbbLH.Size = new System.Drawing.Size(268, 28);
             this.cbbLH.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label11.Location = new System.Drawing.Point(289, 23);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(342, 37);
+            this.label11.TabIndex = 102;
+            this.label11.Text = "QUẢN LÝ LOẠI HÀNG";
             // 
             // frmLoaiHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 494);
+            this.ClientSize = new System.Drawing.Size(911, 617);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.cbbLH);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
@@ -179,7 +194,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvDataLH);
             this.Name = "frmLoaiHang";
-            this.Text = "frmLoaiHang";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataLH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,5 +214,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvDataLH;
         private System.Windows.Forms.ComboBox cbbLH;
+        private System.Windows.Forms.Label label11;
     }
 }

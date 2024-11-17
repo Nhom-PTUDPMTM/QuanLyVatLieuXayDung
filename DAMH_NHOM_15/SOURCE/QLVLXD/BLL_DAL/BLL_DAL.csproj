@@ -123,6 +123,7 @@
     <Compile Include="CTGiaoHangBLL.cs" />
     <Compile Include="CungUngBLL.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DatHangBLL.cs" />
     <Compile Include="GiaoHangBLL.cs" />
     <Compile Include="HangHoaBLL.cs" />
     <Compile Include="KhachHangBLL.cs" />

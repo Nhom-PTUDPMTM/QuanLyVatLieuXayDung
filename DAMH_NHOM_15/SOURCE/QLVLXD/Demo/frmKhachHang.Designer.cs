@@ -49,6 +49,7 @@
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.dtpNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.cboLoaiKH = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).BeginInit();
@@ -65,7 +66,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(12, 19);
+            this.label4.Location = new System.Drawing.Point(20, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 18);
             this.label4.TabIndex = 10;
@@ -75,7 +76,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(12, 56);
+            this.label1.Location = new System.Drawing.Point(20, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 18);
             this.label1.TabIndex = 11;
@@ -85,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(12, 96);
+            this.label3.Location = new System.Drawing.Point(20, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 18);
             this.label3.TabIndex = 13;
@@ -95,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(456, 133);
+            this.label5.Location = new System.Drawing.Point(464, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 18);
             this.label5.TabIndex = 17;
@@ -105,7 +106,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(456, 93);
+            this.label6.Location = new System.Drawing.Point(464, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 18);
             this.label6.TabIndex = 16;
@@ -115,7 +116,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(456, 56);
+            this.label7.Location = new System.Drawing.Point(464, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 18);
             this.label7.TabIndex = 15;
@@ -125,7 +126,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(456, 19);
+            this.label8.Location = new System.Drawing.Point(464, 76);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 18);
             this.label8.TabIndex = 14;
@@ -134,7 +135,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnThem.Location = new System.Drawing.Point(15, 534);
+            this.btnThem.Location = new System.Drawing.Point(227, 578);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(90, 33);
             this.btnThem.TabIndex = 26;
@@ -145,7 +146,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnXoa.Location = new System.Drawing.Point(111, 534);
+            this.btnXoa.Location = new System.Drawing.Point(323, 578);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(90, 33);
             this.btnXoa.TabIndex = 27;
@@ -156,7 +157,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnSua.Location = new System.Drawing.Point(207, 534);
+            this.btnSua.Location = new System.Drawing.Point(419, 578);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(90, 33);
             this.btnSua.TabIndex = 28;
@@ -167,7 +168,7 @@
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnLuu.Location = new System.Drawing.Point(303, 534);
+            this.btnLuu.Location = new System.Drawing.Point(515, 578);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(90, 33);
             this.btnLuu.TabIndex = 29;
@@ -178,7 +179,7 @@
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Arial", 12F);
-            this.btnHuy.Location = new System.Drawing.Point(399, 534);
+            this.btnHuy.Location = new System.Drawing.Point(611, 578);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(90, 33);
             this.btnHuy.TabIndex = 30;
@@ -189,10 +190,10 @@
             // dgvData
             // 
             this.dgvData.DataSource = typeof(DAL.KhachHang);
-            this.dgvData.Location = new System.Drawing.Point(15, 177);
+            this.dgvData.Location = new System.Drawing.Point(15, 221);
             this.dgvData.MainView = this.gridView1;
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(903, 351);
+            this.dgvData.Size = new System.Drawing.Size(881, 351);
             this.dgvData.TabIndex = 32;
             this.dgvData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -205,7 +206,7 @@
             // 
             // txtTenKH
             // 
-            this.txtTenKH.Location = new System.Drawing.Point(135, 53);
+            this.txtTenKH.Location = new System.Drawing.Point(143, 110);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.txtTenKH.Properties.Appearance.Options.UseFont = true;
@@ -214,7 +215,7 @@
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(135, 16);
+            this.txtMaKH.Location = new System.Drawing.Point(143, 73);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.txtMaKH.Properties.Appearance.Options.UseFont = true;
@@ -223,7 +224,7 @@
             // 
             // txtGioiTinh
             // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(135, 93);
+            this.txtGioiTinh.Location = new System.Drawing.Point(143, 150);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.txtGioiTinh.Properties.Appearance.Options.UseFont = true;
@@ -232,7 +233,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(601, 90);
+            this.txtSDT.Location = new System.Drawing.Point(609, 147);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
@@ -241,7 +242,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(601, 53);
+            this.txtDiaChi.Location = new System.Drawing.Point(609, 110);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
@@ -251,7 +252,7 @@
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.EditValue = null;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(601, 16);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(609, 73);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.dtpNgaySinh.Properties.Appearance.Options.UseFont = true;
@@ -264,7 +265,7 @@
             // 
             // cboLoaiKH
             // 
-            this.cboLoaiKH.Location = new System.Drawing.Point(601, 130);
+            this.cboLoaiKH.Location = new System.Drawing.Point(609, 187);
             this.cboLoaiKH.Name = "cboLoaiKH";
             this.cboLoaiKH.Properties.Appearance.Font = new System.Drawing.Font("Arial", 12F);
             this.cboLoaiKH.Properties.Appearance.Options.UseFont = true;
@@ -273,11 +274,25 @@
             this.cboLoaiKH.Size = new System.Drawing.Size(270, 24);
             this.cboLoaiKH.TabIndex = 42;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.label11.Location = new System.Drawing.Point(270, 8);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(380, 37);
+            this.label11.TabIndex = 101;
+            this.label11.Text = "QUẢN LÝ KHÁCH HÀNG";
+            // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 579);
+            this.ClientSize = new System.Drawing.Size(911, 617);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.cboLoaiKH);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.txtDiaChi);
@@ -299,7 +314,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "frmKhachHang";
-            this.Text = "frmKhachHang";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -338,5 +352,6 @@
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraEditors.DateEdit dtpNgaySinh;
         private DevExpress.XtraEditors.ComboBoxEdit cboLoaiKH;
+        private System.Windows.Forms.Label label11;
     }
 }

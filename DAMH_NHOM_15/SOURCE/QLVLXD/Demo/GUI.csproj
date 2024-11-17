@@ -55,6 +55,9 @@
     <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Login2">
+      <HintPath>..\..\..\RELEASE\Login2.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -147,11 +150,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConvertUltil.cs" />
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCungUng.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCungUng.Designer.cs">
       <DependentUpon>frmCungUng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatHang.Designer.cs">
+      <DependentUpon>frmDatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGiaoHang.cs">
       <SubType>Form</SubType>
@@ -177,11 +189,29 @@
     <Compile Include="frmLoaiHang.Designer.cs">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhapHang.cs">
       <SubType>Form</SubType>
@@ -189,23 +219,50 @@
     <Compile Include="frmNhapHang.Designer.cs">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXuatHang.Designer.cs">
+      <DependentUpon>frmXuatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordExport.cs" />
     <EmbeddedResource Include="frmCungUng.resx">
       <DependentUpon>frmCungUng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDatHang.resx">
+      <DependentUpon>frmDatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoHang.resx">
       <DependentUpon>frmGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHangHoa.resx" />
+    <EmbeddedResource Include="frmHangHoa.resx">
+      <DependentUpon>frmHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoaiHang.resx" />
-    <EmbeddedResource Include="frmNhaCungCap.resx" />
+    <EmbeddedResource Include="frmLoaiHang.resx">
+      <DependentUpon>frmLoaiHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhaCungCap.resx">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXuatHang.resx">
+      <DependentUpon>frmXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

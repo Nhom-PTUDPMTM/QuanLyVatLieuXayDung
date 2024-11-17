@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmKhachHang : Form
+    public partial class frmKhachHang : MetroSet_UI.Forms.MetroSetForm
     {
         KhachHangBLL khachHangBLL = new KhachHangBLL();
         bool isAdd = false, isUpdate = false;
@@ -63,16 +63,16 @@ namespace Demo
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this, "Bạn có muốn xóa khách hàng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            DialogResult result = CustomMessageBox.ShowYesNo("Bạn có muốn xóa khách hàng này không?", "Xác nhận xóa");
             if (result == DialogResult.Yes)
             {
                 if (khachHangBLL.deleteItem(txtMaKH.Text))
                 {
                     reLoad();
-                    MessageBox.Show(this, "Đã xóa thành công !!");
+                    CustomMessageBox.Show("Đã xóa thành công !!");
                 }
                 else
-                    MessageBox.Show(this, "Lỗi khi xóa dữ liệu !!");
+                    CustomMessageBox.Show("Lỗi khi xóa dữ liệu !!");
             }
         }
 
@@ -102,10 +102,10 @@ namespace Demo
                 if (khachHangBLL.addItem(them))
                 {
                     reLoad();
-                    MessageBox.Show(this, "Đã thêm thành công !!");
+                    CustomMessageBox.Show("Đã thêm thành công !!");
                 }
                 else
-                    MessageBox.Show(this, "Lỗi khi thêm dữ liệu !!");
+                    CustomMessageBox.Show("Lỗi khi thêm dữ liệu !!");
             }
             else if (isUpdate)
             {
@@ -124,10 +124,10 @@ namespace Demo
                 if (khachHangBLL.updateItem(sua))
                 {
                     reLoad();
-                    MessageBox.Show(this, "Đã sửa thành công !!");
+                    CustomMessageBox.Show("Đã sửa thành công !!");
                 }
                 else
-                    MessageBox.Show(this, "Lỗi khi sửa dữ liệu !!");
+                    CustomMessageBox.Show("Lỗi khi sửa dữ liệu !!");
             }
             btnLuu.Enabled = !btnLuu.Enabled;
             btnHuy.Enabled = !btnHuy.Enabled;

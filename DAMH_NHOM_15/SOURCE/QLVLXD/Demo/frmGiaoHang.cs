@@ -13,16 +13,22 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmGiaoHang : Form
+    public partial class frmGiaoHang : MetroSet_UI.Forms.MetroSetForm
     {
         PhieuXuatBLL phieuXuatBLL = new PhieuXuatBLL();
         GiaoHangBLL giaoHangBLL = new GiaoHangBLL();
         CTGiaoHangBLL ctGiaoHangBLL = new CTGiaoHangBLL();
         ChiTietPhieuXuatBLL ctPhieuXuatBLL = new ChiTietPhieuXuatBLL();
         SanPhamBLL sanPhamBLL = new SanPhamBLL();
+        private string maNV = string.Empty;
         public frmGiaoHang()
         {
             InitializeComponent();
+        }
+        public frmGiaoHang(string maNVDN)
+        {
+            InitializeComponent();
+            maNV = maNVDN;
         }
         public void reload()
         {
@@ -45,7 +51,6 @@ namespace Demo
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            string maNV = "NV001";
             GiaoHang pn = new GiaoHang();
             pn.MaPX = dgvPhieuXuat.Rows[dgvPhieuXuat.CurrentCell.ColumnIndex].Cells[0].Value.ToString();
             pn.ViTri = txtViTri.Text;
@@ -90,7 +95,7 @@ namespace Demo
                     };
                     if (!giaoHangBLL.addItem(pn))
                     {
-                        MessageBox.Show("Không thể lưu phiếu giao hàng: " + ma);
+                        CustomMessageBox.Show("Không thể lưu phiếu giao hàng: " + ma);
                     }
                 }
             }
@@ -116,13 +121,12 @@ namespace Demo
                     if (r.IsNewRow) continue;
                     string maSP = r.Cells[1].Value?.ToString();
                     string maGH = r.Cells[0].Value?.ToString();
-                    string maNV = "NV001";
                     int soLuongGiao, soLuongCon;
                     if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(maGH) ||
                         !int.TryParse(r.Cells[4].Value?.ToString(), out soLuongGiao) ||
                         !int.TryParse(r.Cells[5].Value?.ToString(), out soLuongCon))
                     {
-                        MessageBox.Show("Dữ liệu không hợp lệ! Vui lòng kiểm tra lại các trường dữ liệu.");
+                        CustomMessageBox.Show("Dữ liệu không hợp lệ! Vui lòng kiểm tra lại các trường dữ liệu.");
                         continue;
                     }
                     ChiTietGiaoHang ct = ctGiaoHangBLL.getByCodeTransAndCodeProduct(maGH, maSP);
@@ -154,20 +158,14 @@ namespace Demo
                         }
                         else
                         {
-                            MessageBox.Show("Mã phiếu nhập không được để trống. Vui lòng nhập dữ liệu hợp lệ.");
+                            CustomMessageBox.Show("Mã phiếu nhập không được để trống. Vui lòng nhập dữ liệu hợp lệ.");
                         }
-                    }
-                    HangHoa sp = sanPhamBLL.getSanPhamByCode(maSP);
-                    if (sp != null)
-                    {
-                        sp.SoLuongTon -= int.Parse(r.Cells[4].Value.ToString()) > 0 ? int.Parse(r.Cells[4].Value.ToString()) : 0;
-                        sanPhamBLL.updateSanPham(sp.MaHH, sp);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                CustomMessageBox.Show("An error occurred: " + ex.Message);
             }
             finally
             {
@@ -231,7 +229,7 @@ namespace Demo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
+                    CustomMessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
                 }
             }
         }
@@ -277,7 +275,7 @@ namespace Demo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
+                    CustomMessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
                 }
                 e.SuppressKeyPress = true;
             }
