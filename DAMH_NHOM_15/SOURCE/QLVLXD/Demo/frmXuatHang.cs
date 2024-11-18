@@ -63,6 +63,11 @@ namespace Demo
                             {
                                 dgvCTPhieuXuat.Columns[5].Visible = false;
                                 dgvCTPhieuXuat.Columns[6].Visible = false;
+                                dgvCTPhieuXuat.Columns[0].HeaderText = "Mã sản phẩm";
+                                dgvCTPhieuXuat.Columns[1].HeaderText = "Mã phiếu xuất";
+                                dgvCTPhieuXuat.Columns[2].HeaderText = "Số lượng xuất";
+                                dgvCTPhieuXuat.Columns[3].HeaderText = "Đơn giá";
+                                dgvCTPhieuXuat.Columns[4].HeaderText = "Thành tiền";
                             }
                         }
                     }
@@ -138,6 +143,11 @@ namespace Demo
             }
             DataTable dt = ctpx.getAllbycode(txtMaPhieuXuat.Text);
             dgvCTPhieuXuat.DataSource = dt;
+            dgvCTPhieuXuat.Columns[0].HeaderText = "Mã sản phẩm";
+            dgvCTPhieuXuat.Columns[1].HeaderText = "Mã phiếu xuất";
+            dgvCTPhieuXuat.Columns[2].HeaderText = "Số lượng xuất";
+            dgvCTPhieuXuat.Columns[3].HeaderText = "Đơn giá";
+            dgvCTPhieuXuat.Columns[4].HeaderText = "Thành tiền";
 
             if (dgvCTPhieuXuat.Columns.Count > 6)
             {
@@ -148,7 +158,12 @@ namespace Demo
 
             DataTable dt2 = px.getByDate(dtpStart.Value, dtpEnd.Value);
             dgvPhieuxuat.DataSource = dt2;
-
+            dgvPhieuxuat.Columns[0].HeaderText = "Mã phiếu xuất";
+            dgvPhieuxuat.Columns[1].HeaderText = "Mã khách hàng";
+            dgvPhieuxuat.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuxuat.Columns[3].HeaderText = "Ngày xuất";
+            dgvPhieuxuat.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuxuat.Columns[5].HeaderText = "Thành tiền";
 
             btnLuu.Enabled = true;
         }
@@ -179,7 +194,12 @@ namespace Demo
         {
             DataTable dt = px.getByDate(dtpStart.Value, dtpEnd.Value);
             dgvPhieuxuat.DataSource = dt;
-
+            dgvPhieuxuat.Columns[0].HeaderText = "Mã phiếu xuất";
+            dgvPhieuxuat.Columns[1].HeaderText = "Mã khách hàng";
+            dgvPhieuxuat.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuxuat.Columns[3].HeaderText = "Ngày xuất";
+            dgvPhieuxuat.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuxuat.Columns[5].HeaderText = "Thành tiền";
         }
 
 
@@ -223,7 +243,12 @@ namespace Demo
             newRow["ThanhTien"] = p.ThanhTien;
             listPN.Rows.Add(newRow);
             dgvPhieuxuat.DataSource = listPN;
-
+            dgvPhieuxuat.Columns[0].HeaderText = "Mã phiếu xuất";
+            dgvPhieuxuat.Columns[1].HeaderText = "Mã khách hàng";
+            dgvPhieuxuat.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuxuat.Columns[3].HeaderText = "Ngày xuất";
+            dgvPhieuxuat.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuxuat.Columns[5].HeaderText = "Thành tiền";
 
 
             btnHuyPhieuXuat.Enabled = btnLuuPhieuXuat.Enabled = true;
@@ -240,6 +265,12 @@ namespace Demo
             px.deletePhieuXuat(maHDXuat);
             DataTable dt2 = px.getALL();
             dgvPhieuxuat.DataSource = dt2;
+            dgvPhieuxuat.Columns[0].HeaderText = "Mã phiếu xuất";
+            dgvPhieuxuat.Columns[1].HeaderText = "Mã khách hàng";
+            dgvPhieuxuat.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuxuat.Columns[3].HeaderText = "Ngày xuất";
+            dgvPhieuxuat.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuxuat.Columns[5].HeaderText = "Thành tiền";
             btnHuyPhieuXuat.Enabled = btnLuuPhieuXuat.Enabled = false;
 
         }
@@ -280,6 +311,12 @@ namespace Demo
             DataTable dt = px.getALL();
             dgvPhieuxuat.DataSource = null;
             dgvPhieuxuat.DataSource = dt;
+            dgvPhieuxuat.Columns[0].HeaderText = "Mã phiếu xuất";
+            dgvPhieuxuat.Columns[1].HeaderText = "Mã khách hàng";
+            dgvPhieuxuat.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuxuat.Columns[3].HeaderText = "Ngày xuất";
+            dgvPhieuxuat.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuxuat.Columns[5].HeaderText = "Thành tiền";
         }
 
 
@@ -300,6 +337,11 @@ namespace Demo
                 {
                     dgvCTPhieuXuat.Columns[5].Visible = false;
                     dgvCTPhieuXuat.Columns[6].Visible = false;
+                    dgvCTPhieuXuat.Columns[0].HeaderText = "Mã sản phẩm";
+                    dgvCTPhieuXuat.Columns[1].HeaderText = "Mã phiếu xuất";
+                    dgvCTPhieuXuat.Columns[2].HeaderText = "Số lượng xuất";
+                    dgvCTPhieuXuat.Columns[3].HeaderText = "Đơn giá";
+                    dgvCTPhieuXuat.Columns[4].HeaderText = "Thành tiền";
                 }
                 btnLuu.Enabled = true;
             }
@@ -441,6 +483,12 @@ namespace Demo
 
                 DataTable dt2 = px.getByDate(dtpStart.Value, dtpEnd.Value);
                 dgvPhieuxuat.DataSource = dt2;
+                dgvPhieuxuat.Columns[0].HeaderText = "Mã phiếu xuất";
+                dgvPhieuxuat.Columns[1].HeaderText = "Mã khách hàng";
+                dgvPhieuxuat.Columns[2].HeaderText = "Mã nhân viên";
+                dgvPhieuxuat.Columns[3].HeaderText = "Ngày xuất";
+                dgvPhieuxuat.Columns[4].HeaderText = "Tình trạng";
+                dgvPhieuxuat.Columns[5].HeaderText = "Thành tiền";
                 LoadData();
             }
             catch (Exception ex)
@@ -464,6 +512,12 @@ namespace Demo
                 {
                     double dongia = Convert.ToDouble(dgvCTPhieuXuat.Rows[e.RowIndex].Cells["DonGiaXuat"].Value);
                     int soluong = Convert.ToInt32(dgvCTPhieuXuat.Rows[e.RowIndex].Cells["SLXuat"].Value);
+                    if (soluong < 0)
+                    {
+                        CustomMessageBox.Show("Số lượng xuất không được âm.");
+
+                        return;
+                    }
                     double thanhtien = dongia * soluong;
                     dgvCTPhieuXuat.Rows[e.RowIndex].Cells["ThanhTien"].Value = thanhtien;
                     btnLuu.Enabled = true;

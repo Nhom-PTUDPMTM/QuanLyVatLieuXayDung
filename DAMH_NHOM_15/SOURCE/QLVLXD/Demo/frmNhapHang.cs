@@ -59,6 +59,12 @@ namespace Demo
             dgvPhieuNhap.DataSource = dt;
             if(dt.Columns.Count > 6)
             {
+                dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+                dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+                dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+                dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+                dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+                dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
                 dgvPhieuNhap.Columns[6].Visible = false;
                 dgvPhieuNhap.Columns[7].Visible = false;
             }
@@ -108,6 +114,11 @@ namespace Demo
                 dgvCTPhieuNhap.DataSource = kq;
                 dgvCTPhieuNhap.Columns[5].Visible = false;
                 dgvCTPhieuNhap.Columns[6].Visible = false;
+                dgvCTPhieuNhap.Columns[0].HeaderText = "Mã hàng hóa";
+                dgvCTPhieuNhap.Columns[1].HeaderText = "Mã phiếu xuất";
+                dgvCTPhieuNhap.Columns[2].HeaderText = "Số lượng nhập";
+                dgvCTPhieuNhap.Columns[3].HeaderText = "Đơn giá nhập";
+                dgvCTPhieuNhap.Columns[4].HeaderText = "Thành tiền";
             }
             DataTable dt = phieunhapBLL.getByDate(dtpStart.Value, dtpEnd.Value);
             if(dt!= null)
@@ -116,6 +127,12 @@ namespace Demo
                 dgvPhieuNhap.DataSource = dt;
                 dgvPhieuNhap.Columns[6].Visible = false;
                 dgvPhieuNhap.Columns[7].Visible = false;
+                dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+                dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+                dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+                dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+                dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+                dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
             }
             btnLuu.Enabled = true;
         }
@@ -194,6 +211,12 @@ namespace Demo
             dgvPhieuNhap.DataSource = listPN;
             dgvPhieuNhap.Columns[6].Visible = false;
             dgvPhieuNhap.Columns[7].Visible = false;
+            dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+            dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+            dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+            dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
             btnHuyPhieuNhap.Enabled = btnLuuPhieuNhap.Enabled = true;
         }
 
@@ -235,6 +258,12 @@ namespace Demo
             dgvPhieuNhap.DataSource = dt;
             dgvPhieuNhap.Columns[6].Visible = false;
             dgvPhieuNhap.Columns[7].Visible = false;
+            dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+            dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+            dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+            dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
         }
 
         private void btnHuyPhieuNhap_Click(object sender, EventArgs e)
@@ -245,11 +274,16 @@ namespace Demo
             dgvPhieuNhap.DataSource = dt;
             dgvPhieuNhap.Columns[6].Visible = false;
             dgvPhieuNhap.Columns[7].Visible = false;
+            dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+            dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+            dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+            dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            btnLuu.Enabled = false;
             try
             {
                 double tong = 0;
@@ -270,6 +304,11 @@ namespace Demo
                     ChiTietPhieuNhap ct = CTphieunhapBLL.getByCodeProduct(maPhieuNhap, maSanPham);
                     if (ct != null)
                     {
+                        if (soLuong < 0)
+                        {
+                            CustomMessageBox.Show("Số lượng không phù hợp tạo mã PN: " + ct.MaHDNhap + " và mã HH: " + ct.MaHH + ".");
+                            continue;
+                        }
                         ct.SLNhap = soLuong;
                         ct.ThanhTien = soLuong * donGia;
                         CTphieunhapBLL.updateItem(ct, ct);
@@ -287,6 +326,11 @@ namespace Demo
                                 SLNhap = soLuong,
                                 ThanhTien = soLuong * donGia
                             };
+                            if (newCT.SLNhap < 0)
+                            {
+                                CustomMessageBox.Show("Số lượng không phù hợp tạo mã PN: " + newCT.MaHDNhap + " và mã HH: " + newCT.MaHH + ".");
+                                continue;
+                            }
                             tong += (double)newCT.ThanhTien;
                             CTphieunhapBLL.addItem(newCT);
                         }
@@ -320,7 +364,7 @@ namespace Demo
             }
             finally
             {
-                btnLuu.Enabled = true;
+                btnLuu.Enabled = false;
             }
         }
 
@@ -346,6 +390,12 @@ namespace Demo
                     {
                         dgvSanPham.Columns[7].Visible = false;
                     }
+                    dgvSanPham.Columns[1].HeaderText = "Mã hàng hóa";
+                    dgvSanPham.Columns[2].HeaderText = "Tên hàng hóa";
+                    dgvSanPham.Columns[3].HeaderText = "Mã loại";
+                    dgvSanPham.Columns[4].HeaderText = "Đơn vị";
+                    dgvSanPham.Columns[5].HeaderText = "Đơn giá";
+                    dgvSanPham.Columns[6].HeaderText = "Số lượng tồn";
                 }
                 catch (Exception ex)
                 {
@@ -362,6 +412,7 @@ namespace Demo
                 txtMaPhieuNhap.Text = row.Cells[0].Value.ToString();
                 dtpNgayNhap.Text = row.Cells[3].Value.ToString();
                 txtThanhTien.Text = row.Cells[5].Value.ToString();
+                txtThanhTien.TextAlign = HorizontalAlignment.Right;
                 DataTable dt = CTphieunhapBLL.getAllByCode(txtMaPhieuNhap.Text);
                 dgvCTPhieuNhap.DataSource = null;
                 if (dt != null && dt.Rows.Count > 0)
@@ -380,6 +431,11 @@ namespace Demo
                     emptyTable.Columns.Add("ThanhTien");
                     dgvCTPhieuNhap.DataSource = emptyTable;
                 }
+                dgvCTPhieuNhap.Columns[0].HeaderText = "Mã hàng hóa";
+                dgvCTPhieuNhap.Columns[1].HeaderText = "Mã phiếu xuất";
+                dgvCTPhieuNhap.Columns[2].HeaderText = "Số lượng nhập";
+                dgvCTPhieuNhap.Columns[3].HeaderText = "Đơn giá nhập";
+                dgvCTPhieuNhap.Columns[4].HeaderText = "Thành tiền";
             }
         }
 
@@ -392,6 +448,11 @@ namespace Demo
                 {
                     double dongia = Convert.ToDouble(dgvCTPhieuNhap.Rows[e.RowIndex].Cells["DonGiaNhap"].Value);
                     int soluong = Convert.ToInt32(dgvCTPhieuNhap.Rows[e.RowIndex].Cells["SLNhap"].Value);
+                    if (soluong < 0)
+                    {
+                        CustomMessageBox.Show("Số lượng không phù hợp tạo mã PN: " + dgvCTPhieuNhap.Rows[e.RowIndex].Cells["MaHDNhap"].Value + " và mã HH: " + dgvCTPhieuNhap.Rows[e.RowIndex].Cells["MaSP"].Value + ".");
+                        return;
+                    }
                     double thanhtien = dongia * soluong;
                     dgvCTPhieuNhap.Rows[e.RowIndex].Cells["ThanhTien"].Value = thanhtien;
                     btnLuu.Enabled = true;
@@ -426,6 +487,11 @@ namespace Demo
                             dgvCTPhieuNhap.DataSource = kq;
                             dgvCTPhieuNhap.Columns[5].Visible = false;
                             dgvCTPhieuNhap.Columns[6].Visible = false;
+                            dgvCTPhieuNhap.Columns[0].HeaderText = "Mã hàng hóa";
+                            dgvCTPhieuNhap.Columns[1].HeaderText = "Mã phiếu xuất";
+                            dgvCTPhieuNhap.Columns[2].HeaderText = "Số lượng nhập";
+                            dgvCTPhieuNhap.Columns[3].HeaderText = "Đơn giá nhập";
+                            dgvCTPhieuNhap.Columns[4].HeaderText = "Thành tiền";
                         }
                     }
                 }

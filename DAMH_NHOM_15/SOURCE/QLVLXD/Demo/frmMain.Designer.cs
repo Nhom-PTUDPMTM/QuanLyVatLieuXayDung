@@ -47,7 +47,6 @@
             this.txtMaNV = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.tabChucNang = new MetroSet_UI.Child.MetroSetSetTabPage();
-            this.btnSetting = new MetroSet_UI.Controls.MetroSetButton();
             this.btnThoat = new MetroSet_UI.Controls.MetroSetButton();
             this.metroSetTabControl1.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
@@ -64,14 +63,14 @@
             this.metroSetTabControl1.Controls.Add(this.tabQuanLy);
             this.metroSetTabControl1.Controls.Add(this.tabThongTin);
             this.metroSetTabControl1.Controls.Add(this.tabChucNang);
-            this.metroSetTabControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroSetTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroSetTabControl1.IsDerivedStyle = true;
             this.metroSetTabControl1.ItemSize = new System.Drawing.Size(100, 38);
             this.metroSetTabControl1.Location = new System.Drawing.Point(17, 89);
             this.metroSetTabControl1.Name = "metroSetTabControl1";
-            this.metroSetTabControl1.SelectedIndex = 0;
+            this.metroSetTabControl1.SelectedIndex = 1;
             this.metroSetTabControl1.SelectedTextColor = System.Drawing.Color.White;
-            this.metroSetTabControl1.Size = new System.Drawing.Size(1184, 723);
+            this.metroSetTabControl1.Size = new System.Drawing.Size(1193, 723);
             this.metroSetTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroSetTabControl1.Speed = 100;
             this.metroSetTabControl1.Style = MetroSet_UI.Enums.Style.Light;
@@ -93,7 +92,7 @@
             this.tabQuanLy.IsDerivedStyle = true;
             this.tabQuanLy.Location = new System.Drawing.Point(4, 42);
             this.tabQuanLy.Name = "tabQuanLy";
-            this.tabQuanLy.Size = new System.Drawing.Size(1176, 677);
+            this.tabQuanLy.Size = new System.Drawing.Size(1185, 677);
             this.tabQuanLy.Style = MetroSet_UI.Enums.Style.Light;
             this.tabQuanLy.StyleManager = this.styleManager1;
             this.tabQuanLy.TabIndex = 1;
@@ -406,7 +405,7 @@
             this.pnlFormQL.IsDerivedStyle = true;
             this.pnlFormQL.Location = new System.Drawing.Point(209, 3);
             this.pnlFormQL.Name = "pnlFormQL";
-            this.pnlFormQL.Size = new System.Drawing.Size(967, 668);
+            this.pnlFormQL.Size = new System.Drawing.Size(971, 668);
             this.pnlFormQL.Style = MetroSet_UI.Enums.Style.Light;
             this.pnlFormQL.StyleManager = null;
             this.pnlFormQL.TabIndex = 2;
@@ -432,7 +431,7 @@
             this.tabThongTin.IsDerivedStyle = true;
             this.tabThongTin.Location = new System.Drawing.Point(4, 42);
             this.tabThongTin.Name = "tabThongTin";
-            this.tabThongTin.Size = new System.Drawing.Size(1176, 677);
+            this.tabThongTin.Size = new System.Drawing.Size(1185, 677);
             this.tabThongTin.Style = MetroSet_UI.Enums.Style.Light;
             this.tabThongTin.StyleManager = this.styleManager1;
             this.tabThongTin.TabIndex = 2;
@@ -488,7 +487,6 @@
             // tabChucNang
             // 
             this.tabChucNang.BaseColor = System.Drawing.Color.White;
-            this.tabChucNang.Controls.Add(this.btnSetting);
             this.tabChucNang.Controls.Add(this.btnThoat);
             this.tabChucNang.Font = null;
             this.tabChucNang.ImageIndex = 0;
@@ -496,7 +494,7 @@
             this.tabChucNang.IsDerivedStyle = true;
             this.tabChucNang.Location = new System.Drawing.Point(4, 42);
             this.tabChucNang.Name = "tabChucNang";
-            this.tabChucNang.Size = new System.Drawing.Size(1176, 677);
+            this.tabChucNang.Size = new System.Drawing.Size(1185, 677);
             this.tabChucNang.Style = MetroSet_UI.Enums.Style.Light;
             this.tabChucNang.StyleManager = this.styleManager1;
             this.tabChucNang.TabIndex = 3;
@@ -504,32 +502,6 @@
             this.tabChucNang.ThemeAuthor = "Narwin";
             this.tabChucNang.ThemeName = "MetroLite";
             this.tabChucNang.ToolTipText = null;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnSetting.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnSetting.DisabledForeColor = System.Drawing.Color.Gray;
-            this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSetting.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.btnSetting.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.btnSetting.HoverTextColor = System.Drawing.Color.White;
-            this.btnSetting.IsDerivedStyle = true;
-            this.btnSetting.Location = new System.Drawing.Point(432, 151);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnSetting.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnSetting.NormalTextColor = System.Drawing.Color.White;
-            this.btnSetting.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnSetting.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnSetting.PressTextColor = System.Drawing.Color.White;
-            this.btnSetting.Size = new System.Drawing.Size(129, 57);
-            this.btnSetting.Style = MetroSet_UI.Enums.Style.Light;
-            this.btnSetting.StyleManager = null;
-            this.btnSetting.TabIndex = 1;
-            this.btnSetting.Text = "Cài đặt cơ sở dữ liệu";
-            this.btnSetting.ThemeAuthor = "Narwin";
-            this.btnSetting.ThemeName = "MetroLite";
             // 
             // btnThoat
             // 
@@ -598,7 +570,6 @@
         private MetroSet_UI.Controls.MetroSetButton btnLoaiHang;
         private MetroSet_UI.Controls.MetroSetButton btnKhachHang;
         private MetroSet_UI.Controls.MetroSetButton btnHangHoa;
-        private MetroSet_UI.Controls.MetroSetButton btnSetting;
         private MetroSet_UI.Controls.MetroSetTextBox txtMaNV;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private MetroSet_UI.Controls.MetroSetButton btnNhapHang;

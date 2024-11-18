@@ -55,7 +55,14 @@ namespace Demo
             dgvDS.ReadOnly = true;
             dgvDS.Columns[9].Visible = false;
             dgvDS.Columns[8].Visible = false;
-
+            dgvDS.Columns[0].HeaderText = "Mã khách hàng";
+            dgvDS.Columns[1].HeaderText = "Mã phiếu xuất";
+            dgvDS.Columns[2].HeaderText = "Thành tiền";
+            dgvDS.Columns[3].HeaderText = "Tình trạng";
+            dgvDS.Columns[4].HeaderText = "Ghi chú";
+            dgvDS.Columns[5].HeaderText = "Ngày đặt";
+            dgvDS.Columns[6].HeaderText = "Ngày giao";
+            dgvDS.Columns[7].HeaderText = "Giao tới";
         }
 
 
@@ -119,7 +126,6 @@ namespace Demo
             string Giaotoi = txtGiaoToi.Text;
             DonHang p = new DonHang();
             p.MaPX = MaPX;
-            p.ThanhTien = 0;
             p.NgayDat = dtpNgayDat.Value.Date;
             p.NgayGiao = dptNgaygiao.Value.Date;
             p.MaTK = MaKH;
@@ -198,7 +204,7 @@ namespace Demo
                     var ma = r.Cells[0].Value?.ToString();
                     if (string.IsNullOrEmpty(ma)) continue;
 
-                    DonHang kq = dh.getByCode(ma);
+                    DonHang kq = dh.getByCodeTK(ma, cboMaPX.SelectedValue.ToString());
                     if (kq == null)
                     {
 

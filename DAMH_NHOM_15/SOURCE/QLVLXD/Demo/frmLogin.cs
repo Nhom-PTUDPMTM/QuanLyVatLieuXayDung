@@ -21,22 +21,27 @@ namespace Demo
             InitializeComponent();
         }
 
-        private void login1_SubmitClicked(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            if (login1.UserName.Length == 0 || login1.Password.Length == 0)
+            Application.Exit();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Length == 0 || txtUsername.Text.Length == 0)
             {
-                CustomMessageBox.Show("Không thể để trống tài khoản hoặc mật khẩu !!", "Thông báo");
+                MetroSetMessageBox.Show(this, "Không thể để trống tài khoản hoặc mật khẩu !!", "Thông báo");
                 return;
             }
-            string kq = nhanVienBLL.checkAccount(login1.UserName, login1.Password);
+            string kq = nhanVienBLL.checkAccount(txtUsername.Text, txtPassword.Text);
             if (kq == "None")
             {
-                CustomMessageBox.Show("Sai thông tin tài khoản hoặc mật khẩu !!", "Thông báo");
+                MetroSetMessageBox.Show(this, "Sai thông tin tài khoản hoặc mật khẩu !!", "Thông báo");
                 return;
             }
             else if (kq == "Error")
             {
-                CustomMessageBox.Show("Xảy ra lỗi !!", "Thông báo");
+                MetroSetMessageBox.Show(this, "Xảy ra lỗi !!", "Thông báo");
                 return;
             }
             frmMain frm = new frmMain(kq);
@@ -44,9 +49,11 @@ namespace Demo
             frm.Show();
         }
 
-        private void login1_CancelClicked(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            panel1.BackColor = Color.FromArgb(50, 0, 0, 0);
+            btnLogin.BackColor = Color.FromArgb(50, 0, 0, 0);
+            btnExit.BackColor = Color.FromArgb(50, 0, 0, 0);
         }
     }
 }

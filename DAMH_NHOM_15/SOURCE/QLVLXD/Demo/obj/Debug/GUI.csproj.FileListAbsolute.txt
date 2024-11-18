@@ -97,3 +97,14 @@ D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\b
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\MetroFramework.dll
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\MetroFramework.Fonts.dll
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\MetroSet UI.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\Btns.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\Login2.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmCungUng.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmDatHang.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmHangHoa.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmLoaiHang.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmLogin.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmMain.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmNhaCungCap.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmNhanVien.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmXuatHang.resources

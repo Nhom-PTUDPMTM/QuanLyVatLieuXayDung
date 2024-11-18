@@ -33,6 +33,14 @@ namespace Demo
             {
                 DataTable dt = nhanVienBLL.getAll();
                 dgvDS.DataSource = dt;
+                dgvDS.Columns["MaNV"].HeaderText = "Mã Nhân viên";
+                dgvDS.Columns["TenNV"].HeaderText = "Tên nhân viên";
+                dgvDS.Columns["MatKhau"].HeaderText = "Mật khẩu";
+                dgvDS.Columns["GioiTinh"].HeaderText = "Giới tính";
+                dgvDS.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+                dgvDS.Columns["DiaChi"].HeaderText = "Địa chỉ";
+                dgvDS.Columns["SDT"].HeaderText = "Số điện thoại";
+                dgvDS.Columns["ChucVu"].HeaderText = "Chức vụ";
             }
             catch (Exception ex)
             {

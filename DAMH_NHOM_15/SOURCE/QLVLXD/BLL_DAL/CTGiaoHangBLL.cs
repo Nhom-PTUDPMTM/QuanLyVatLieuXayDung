@@ -81,5 +81,23 @@ namespace BLL_DAL
             }
             return b;
         }
+        public bool deleteItem(ChiTietGiaoHang a)
+        {
+            bool b = false;
+            if (a != null)
+            {
+                try
+                {
+                    vlxd.ChiTietGiaoHangs.DeleteOnSubmit(a);
+                    vlxd.SubmitChanges();
+                    b = true;
+                }
+                catch
+                {
+                    b = false;
+                }
+            }
+            return b;
+        }
     }
 }
