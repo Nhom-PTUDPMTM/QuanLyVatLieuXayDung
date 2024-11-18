@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCTPhieuNhap = new System.Windows.Forms.DataGridView();
+            this.chuotPhai = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnInPhieu = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.cboNhaCungCap = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chuotPhai = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTPhieuNhap)).BeginInit();
@@ -71,7 +71,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.Location = new System.Drawing.Point(316, 401);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(587, 201);
+            this.groupBox3.Size = new System.Drawing.Size(596, 201);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết phiếu nhập";
@@ -85,6 +85,11 @@
             this.dgvCTPhieuNhap.Size = new System.Drawing.Size(568, 127);
             this.dgvCTPhieuNhap.TabIndex = 20;
             this.dgvCTPhieuNhap.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPhieuNhap_CellEndEdit);
+            // 
+            // chuotPhai
+            // 
+            this.chuotPhai.Name = "chuotPhai";
+            this.chuotPhai.Size = new System.Drawing.Size(61, 4);
             // 
             // btnLuu
             // 
@@ -117,7 +122,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(316, 62);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(587, 333);
+            this.groupBox2.Size = new System.Drawing.Size(596, 333);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phiếu nhập";
@@ -316,11 +321,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Nhà cung cấp";
             // 
-            // chuotPhai
-            // 
-            this.chuotPhai.Name = "chuotPhai";
-            this.chuotPhai.Size = new System.Drawing.Size(61, 4);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 617);
+            this.ClientSize = new System.Drawing.Size(919, 617);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

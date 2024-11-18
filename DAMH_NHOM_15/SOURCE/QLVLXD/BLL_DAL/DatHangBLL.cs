@@ -38,9 +38,9 @@ namespace BLL_DAL
 
         }
 
-        public DonHang getByCode(string code)
+        public DonHang getByCodeTK(string codeTK, string codePX)
         {
-            return vlxd.DonHangs.Where(t => t.MaTK == code).FirstOrDefault();
+            return vlxd.DonHangs.Where(t => t.MaTK == codeTK && t.MaPX == codePX).FirstOrDefault();
         }
         public DataTable getAll()
         {

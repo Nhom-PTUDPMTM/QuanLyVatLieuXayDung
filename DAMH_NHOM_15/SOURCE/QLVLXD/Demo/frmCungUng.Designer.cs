@@ -33,10 +33,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btns1 = new Btns.btns();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.btnThemNCC = new System.Windows.Forms.Button();
             this.cboNCC = new System.Windows.Forms.ComboBox();
             this.txtSL = new System.Windows.Forms.TextBox();
-            this.txtLoaiSP = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
@@ -47,20 +45,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.cboLoaiHH = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboLoaiHH);
             this.groupBox1.Controls.Add(this.txtDonVi);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btns1);
             this.groupBox1.Controls.Add(this.dgvData);
-            this.groupBox1.Controls.Add(this.btnThemNCC);
             this.groupBox1.Controls.Add(this.cboNCC);
             this.groupBox1.Controls.Add(this.txtSL);
-            this.groupBox1.Controls.Add(this.txtLoaiSP);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.txtMaSP);
             this.groupBox1.Controls.Add(this.txtTenSP);
@@ -116,22 +114,12 @@
             this.dgvData.TabIndex = 14;
             this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
             // 
-            // btnThemNCC
-            // 
-            this.btnThemNCC.Location = new System.Drawing.Point(812, 133);
-            this.btnThemNCC.Name = "btnThemNCC";
-            this.btnThemNCC.Size = new System.Drawing.Size(30, 23);
-            this.btnThemNCC.TabIndex = 12;
-            this.btnThemNCC.Text = "+";
-            this.btnThemNCC.UseVisualStyleBackColor = true;
-            this.btnThemNCC.Click += new System.EventHandler(this.btnThemNCC_Click);
-            // 
             // cboNCC
             // 
             this.cboNCC.FormattingEnabled = true;
             this.cboNCC.Location = new System.Drawing.Point(619, 130);
             this.cboNCC.Name = "cboNCC";
-            this.cboNCC.Size = new System.Drawing.Size(187, 26);
+            this.cboNCC.Size = new System.Drawing.Size(223, 26);
             this.cboNCC.TabIndex = 11;
             this.cboNCC.SelectedIndexChanged += new System.EventHandler(this.cboNCC_SelectedIndexChanged);
             // 
@@ -141,13 +129,6 @@
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(223, 26);
             this.txtSL.TabIndex = 10;
-            // 
-            // txtLoaiSP
-            // 
-            this.txtLoaiSP.Location = new System.Drawing.Point(619, 35);
-            this.txtLoaiSP.Name = "txtLoaiSP";
-            this.txtLoaiSP.Size = new System.Drawing.Size(223, 26);
-            this.txtLoaiSP.TabIndex = 9;
             // 
             // txtDonGia
             // 
@@ -237,6 +218,14 @@
             this.label8.TabIndex = 97;
             this.label8.Text = "QUẢN LÝ CUNG ỨNG";
             // 
+            // cboLoaiHH
+            // 
+            this.cboLoaiHH.FormattingEnabled = true;
+            this.cboLoaiHH.Location = new System.Drawing.Point(619, 32);
+            this.cboLoaiHH.Name = "cboLoaiHH";
+            this.cboLoaiHH.Size = new System.Drawing.Size(223, 26);
+            this.cboLoaiHH.TabIndex = 18;
+            // 
             // frmCungUng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -258,10 +247,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvData;
-        private System.Windows.Forms.Button btnThemNCC;
         private System.Windows.Forms.ComboBox cboNCC;
         private System.Windows.Forms.TextBox txtSL;
-        private System.Windows.Forms.TextBox txtLoaiSP;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.TextBox txtTenSP;
@@ -275,5 +262,6 @@
         private System.Windows.Forms.TextBox txtDonVi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboLoaiHH;
     }
 }
