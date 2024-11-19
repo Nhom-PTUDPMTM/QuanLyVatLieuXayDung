@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\",
+  "WorkspaceRootPath": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\daihoc\\hk7\\ptudpmtm\\da\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\hoc_ki_7_huit\\ptpm\\do_an\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmcungung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmcungung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\daihoc\\hk7\\ptudpmtm\\da\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\hoc_ki_7_huit\\ptpm\\do_an\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\hoc_ki_7_huit\\ptpm\\do_an\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +22,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmConfig.cs",
-              "DocumentMoniker": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmConfig.cs",
-              "RelativeDocumentMoniker": "Demo\\frmConfig.cs",
-              "ToolTip": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmConfig.cs",
-              "RelativeToolTip": "Demo\\frmConfig.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAowDcAAAA7AAAAAAAAAA==",
+              "Title": "frmCungUng.cs [Design]",
+              "DocumentMoniker": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmCungUng.cs",
+              "RelativeDocumentMoniker": "Demo\\frmCungUng.cs",
+              "ToolTip": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmCungUng.cs [Design]",
+              "RelativeToolTip": "Demo\\frmCungUng.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T02:03:01.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T02:28:06.876Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLogin.cs",
-              "RelativeDocumentMoniker": "Demo\\frmLogin.cs",
-              "ToolTip": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLogin.cs",
-              "RelativeToolTip": "Demo\\frmLogin.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAnwC4AAAA4AAAAAAAAAA==",
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmMain.cs",
+              "RelativeDocumentMoniker": "Demo\\frmMain.cs",
+              "ToolTip": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmMain.cs [Design]",
+              "RelativeToolTip": "Demo\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T01:14:58.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T02:28:05.59Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Demo\\frmLogin.cs",
+              "ToolTip": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLogin.cs [Design]",
+              "RelativeToolTip": "Demo\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:28:02.726Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             }
           ]
         }
