@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmLoaiHang : Form
+    public partial class frmLoaiHang : MetroSet_UI.Forms.MetroSetForm
     {
         LoaiHangBLL lh = new LoaiHangBLL();
         bool isAdd = false, isUpdate = false;
@@ -60,7 +60,7 @@ namespace Demo
         private void btnXoa_Click(object sender, EventArgs e)
         {
             // Hiển thị MessageBox xác nhận
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa loại hàng này?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CustomMessageBox.ShowYesNo("Bạn có chắc chắn muốn xóa loại hàng này?", "Xóa");
 
             // Kiểm tra kết quả trả về từ MessageBox
             if (result == DialogResult.Yes)
@@ -72,17 +72,17 @@ namespace Demo
 
                     lh.deleteItemLoaiHang(loaiHang);
 
-                    MessageBox.Show("Xóa loại hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Xóa loại hàng thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy loại hàng để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Không tìm thấy loại hàng để xóa.", "Lỗi");
                 }
             }
             else
             {
-                MessageBox.Show("Hủy thao tác xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CustomMessageBox.Show("Hủy thao tác xóa.", "Thông báo");
             }
         }
 
@@ -101,7 +101,7 @@ namespace Demo
                 // Kiểm tra xem các TextBox có giá trị hay không
                 if (string.IsNullOrEmpty(txtMaLH.Text) || string.IsNullOrEmpty(txtTenLH.Text))
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    CustomMessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                     return;
                 }
 
@@ -116,12 +116,12 @@ namespace Demo
                 // Gọi phương thức thêm nhà cung cấp
                 if (lh.addItemLoaiHang(loaiHang))
                 {
-                    MessageBox.Show("Thêm loại hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Thêm loại hàng thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi thêm loại hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Lỗi khi thêm loại hàng.", "Lỗi");
                 }
             }
             else if (isUpdate)
@@ -129,7 +129,7 @@ namespace Demo
                 // Kiểm tra lại các TextBox
                 if (string.IsNullOrEmpty(txtMaLH.Text) || string.IsNullOrEmpty(txtTenLH.Text))
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    CustomMessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                     return;
                 }
 
@@ -151,12 +151,12 @@ namespace Demo
                 // Gọi phương thức sửa nhà cung cấp, truyền cả đối tượng cũ và mới
                 if (lh.updateItemLoaiHang(loaiHangCurrent, loaiHangNew))
                 {
-                    MessageBox.Show("Sửa loại hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CustomMessageBox.Show("Sửa loại hàng thành công!", "Thành công");
                     loadData();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi sửa loại hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CustomMessageBox.Show("Lỗi khi sửa loại hàng.", "Lỗi");
                 }
             }
         }
@@ -166,6 +166,6 @@ namespace Demo
             clearData();
         }
 
-        
+
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Numerics.Tensors;
 using System.Text;
@@ -13,13 +12,15 @@ namespace BLL_DAL
     public class NhaCungCapBLL
     {
         VLXDDataContext vlxd = new VLXDDataContext();
+
         public DataTable getCodeAndName()
         {
             DataTable dt = new DataTable();
             var kq = from tcs in vlxd.NhaCCs
-                     select new { 
-                        MaNCC = tcs.MaNCC,
-                        TenNCC = tcs.TenNCC
+                     select new
+                     {
+                         MaNCC = tcs.MaNCC,
+                         TenNCC = tcs.TenNCC
                      };
             if (kq.Any())
             {
@@ -109,7 +110,7 @@ namespace BLL_DAL
                 // Nếu không có mã nhà cung cấp nào, trả về mã mặc định
                 return "NCC001";
             }
-            
+
             //Dạng Mã Nhà Cung Cấp là 'NCC001'
             string prefix = new string(maxMaNCC.TakeWhile(char.IsLetter).ToArray());
             string numberPart = maxMaNCC.Substring(prefix.Length);
@@ -189,5 +190,6 @@ namespace BLL_DAL
             }
             return b;
         }
+
     }
 }

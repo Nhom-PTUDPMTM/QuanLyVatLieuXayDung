@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class frmNhapHang : Form
+    public partial class frmNhapHang : MetroSet_UI.Forms.MetroSetForm
     {
         NhaCungCapBLL nccBLL = new NhaCungCapBLL();
         SanPhamBLL hanghoaBLL = new SanPhamBLL();
         PhieuNhapBLL phieunhapBLL = new PhieuNhapBLL();
         ChiTietPhieuNhapBLL CTphieunhapBLL = new ChiTietPhieuNhapBLL();
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        private string maNV = string.Empty;
         public frmNhapHang()
         {
             InitializeComponent();
@@ -26,6 +27,15 @@ namespace Demo
             ToolStripMenuItem deleteItem = new ToolStripMenuItem("Xóa");
             chuotPhai.Items.AddRange(new ToolStripItem[] { deleteItem });
             deleteItem.Click += new EventHandler(DeleteItem_Click);
+        }
+        public frmNhapHang(string maNVDN)
+        {
+            InitializeComponent();
+            btnHuyPhieuNhap.Enabled = btnLuuPhieuNhap.Enabled = btnLuu.Enabled = false;
+            ToolStripMenuItem deleteItem = new ToolStripMenuItem("Xóa");
+            chuotPhai.Items.AddRange(new ToolStripItem[] { deleteItem });
+            deleteItem.Click += new EventHandler(DeleteItem_Click);
+            maNV = maNVDN;
         }
 
         public void reLoad()
@@ -49,6 +59,12 @@ namespace Demo
             dgvPhieuNhap.DataSource = dt;
             if(dt.Columns.Count > 6)
             {
+                dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+                dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+                dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+                dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+                dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+                dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
                 dgvPhieuNhap.Columns[6].Visible = false;
                 dgvPhieuNhap.Columns[7].Visible = false;
             }
@@ -98,6 +114,11 @@ namespace Demo
                 dgvCTPhieuNhap.DataSource = kq;
                 dgvCTPhieuNhap.Columns[5].Visible = false;
                 dgvCTPhieuNhap.Columns[6].Visible = false;
+                dgvCTPhieuNhap.Columns[0].HeaderText = "Mã hàng hóa";
+                dgvCTPhieuNhap.Columns[1].HeaderText = "Mã phiếu xuất";
+                dgvCTPhieuNhap.Columns[2].HeaderText = "Số lượng nhập";
+                dgvCTPhieuNhap.Columns[3].HeaderText = "Đơn giá nhập";
+                dgvCTPhieuNhap.Columns[4].HeaderText = "Thành tiền";
             }
             DataTable dt = phieunhapBLL.getByDate(dtpStart.Value, dtpEnd.Value);
             if(dt!= null)
@@ -106,6 +127,12 @@ namespace Demo
                 dgvPhieuNhap.DataSource = dt;
                 dgvPhieuNhap.Columns[6].Visible = false;
                 dgvPhieuNhap.Columns[7].Visible = false;
+                dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+                dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+                dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+                dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+                dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+                dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
             }
             btnLuu.Enabled = true;
         }
@@ -152,12 +179,11 @@ namespace Demo
             WordExport wd = new WordExport(Application.StartupPath + "\\Temp.dotx", true);
             wd.WriteFields(dic);
             wd.WriteTable(dt, 1);
-            MessageBox.Show("Xuất xong !!");
+            CustomMessageBox.Show("Xuất xong !!");
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            string maNV = "NV001";
             PhieuNhap pn = new PhieuNhap();
             pn.ThanhTien = 0;
             pn.MaNV = maNV;
@@ -166,7 +192,13 @@ namespace Demo
             DataTable dt2 = phieunhapBLL.getAll();
             int dem = dt2.Rows.Count;
             pn.TinhTrang = "Chưa xác nhận";
-            pn.MaHDNhap = "PN" + (dem + 1).ToString("D3");
+            string ma = "PN" + (dem + 1).ToString("D3");
+            while (phieunhapBLL.getByCode(ma) != null)
+            {
+                dem++;
+                ma = "PN" + (dem + 1).ToString("D3");
+            }
+            pn.MaHDNhap = ma;
             DataTable listPN = phieunhapBLL.getAll();
             DataRow newRow = listPN.NewRow();
             newRow["MaHDNhap"] = pn.MaHDNhap;
@@ -179,6 +211,12 @@ namespace Demo
             dgvPhieuNhap.DataSource = listPN;
             dgvPhieuNhap.Columns[6].Visible = false;
             dgvPhieuNhap.Columns[7].Visible = false;
+            dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+            dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+            dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+            dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
             btnHuyPhieuNhap.Enabled = btnLuuPhieuNhap.Enabled = true;
         }
 
@@ -193,7 +231,6 @@ namespace Demo
                 PhieuNhap kq = phieunhapBLL.getByCode(maPhieuNhap);
                 if (kq == null)
                 {
-                    string maNV = "NV001";
                     string maNCC = r.Cells[1].Value?.ToString();
                     DateTime ngayNhap = r.Cells[3].Value != null && DateTime.TryParse(r.Cells[3].Value.ToString(), out DateTime parsedNgayNhap)
                                         ? parsedNgayNhap
@@ -212,7 +249,7 @@ namespace Demo
                     };
                     if (!phieunhapBLL.addItem(pn))
                     {
-                        MessageBox.Show("Không thể lưu phiếu nhập: " + maPhieuNhap);
+                        CustomMessageBox.Show("Không thể lưu phiếu nhập: " + maPhieuNhap);
                     }
                 }
             }
@@ -221,6 +258,12 @@ namespace Demo
             dgvPhieuNhap.DataSource = dt;
             dgvPhieuNhap.Columns[6].Visible = false;
             dgvPhieuNhap.Columns[7].Visible = false;
+            dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+            dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+            dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+            dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
         }
 
         private void btnHuyPhieuNhap_Click(object sender, EventArgs e)
@@ -231,11 +274,16 @@ namespace Demo
             dgvPhieuNhap.DataSource = dt;
             dgvPhieuNhap.Columns[6].Visible = false;
             dgvPhieuNhap.Columns[7].Visible = false;
+            dgvPhieuNhap.Columns[0].HeaderText = "Mã phiếu nhập";
+            dgvPhieuNhap.Columns[1].HeaderText = "Mã nhà cung cấp";
+            dgvPhieuNhap.Columns[2].HeaderText = "Mã nhân viên";
+            dgvPhieuNhap.Columns[3].HeaderText = "Ngày nhập";
+            dgvPhieuNhap.Columns[4].HeaderText = "Tình trạng";
+            dgvPhieuNhap.Columns[5].HeaderText = "Thành tiền";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            btnLuu.Enabled = false;
             try
             {
                 double tong = 0;
@@ -250,12 +298,17 @@ namespace Demo
                         !double.TryParse(r.Cells[3].Value?.ToString(), out donGia) ||
                         !int.TryParse(r.Cells[2].Value?.ToString(), out soLuong))
                     {
-                        MessageBox.Show("Dữ liệu không hợp lệ! Vui lòng kiểm tra lại các trường dữ liệu.");
+                        CustomMessageBox.Show("Dữ liệu không hợp lệ! Vui lòng kiểm tra lại các trường dữ liệu.");
                         continue;
                     }
                     ChiTietPhieuNhap ct = CTphieunhapBLL.getByCodeProduct(maPhieuNhap, maSanPham);
                     if (ct != null)
                     {
+                        if (soLuong < 0)
+                        {
+                            CustomMessageBox.Show("Số lượng không phù hợp tạo mã PN: " + ct.MaHDNhap + " và mã HH: " + ct.MaHH + ".");
+                            continue;
+                        }
                         ct.SLNhap = soLuong;
                         ct.ThanhTien = soLuong * donGia;
                         CTphieunhapBLL.updateItem(ct, ct);
@@ -273,12 +326,17 @@ namespace Demo
                                 SLNhap = soLuong,
                                 ThanhTien = soLuong * donGia
                             };
+                            if (newCT.SLNhap < 0)
+                            {
+                                CustomMessageBox.Show("Số lượng không phù hợp tạo mã PN: " + newCT.MaHDNhap + " và mã HH: " + newCT.MaHH + ".");
+                                continue;
+                            }
                             tong += (double)newCT.ThanhTien;
                             CTphieunhapBLL.addItem(newCT);
                         }
                         else
                         {
-                            MessageBox.Show("Mã phiếu nhập không được để trống. Vui lòng nhập dữ liệu hợp lệ.");
+                            CustomMessageBox.Show("Mã phiếu nhập không được để trống. Vui lòng nhập dữ liệu hợp lệ.");
                         }
                     }
                     HangHoa sp = hanghoaBLL.getSanPhamByCode(maSanPham);
@@ -296,17 +354,17 @@ namespace Demo
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy phiếu nhập với mã: " + txtMaPhieuNhap.Text);
+                    CustomMessageBox.Show("Không tìm thấy phiếu nhập với mã: " + txtMaPhieuNhap.Text);
                 }
                 phieunhapBLL.updatePhieuNhap(pn);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                CustomMessageBox.Show("An error occurred: " + ex.Message);
             }
             finally
             {
-                btnLuu.Enabled = true;
+                btnLuu.Enabled = false;
             }
         }
 
@@ -332,10 +390,16 @@ namespace Demo
                     {
                         dgvSanPham.Columns[7].Visible = false;
                     }
+                    dgvSanPham.Columns[1].HeaderText = "Mã hàng hóa";
+                    dgvSanPham.Columns[2].HeaderText = "Tên hàng hóa";
+                    dgvSanPham.Columns[3].HeaderText = "Mã loại";
+                    dgvSanPham.Columns[4].HeaderText = "Đơn vị";
+                    dgvSanPham.Columns[5].HeaderText = "Đơn giá";
+                    dgvSanPham.Columns[6].HeaderText = "Số lượng tồn";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    CustomMessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
         }
@@ -348,6 +412,7 @@ namespace Demo
                 txtMaPhieuNhap.Text = row.Cells[0].Value.ToString();
                 dtpNgayNhap.Text = row.Cells[3].Value.ToString();
                 txtThanhTien.Text = row.Cells[5].Value.ToString();
+                txtThanhTien.TextAlign = HorizontalAlignment.Right;
                 DataTable dt = CTphieunhapBLL.getAllByCode(txtMaPhieuNhap.Text);
                 dgvCTPhieuNhap.DataSource = null;
                 if (dt != null && dt.Rows.Count > 0)
@@ -366,6 +431,11 @@ namespace Demo
                     emptyTable.Columns.Add("ThanhTien");
                     dgvCTPhieuNhap.DataSource = emptyTable;
                 }
+                dgvCTPhieuNhap.Columns[0].HeaderText = "Mã hàng hóa";
+                dgvCTPhieuNhap.Columns[1].HeaderText = "Mã phiếu xuất";
+                dgvCTPhieuNhap.Columns[2].HeaderText = "Số lượng nhập";
+                dgvCTPhieuNhap.Columns[3].HeaderText = "Đơn giá nhập";
+                dgvCTPhieuNhap.Columns[4].HeaderText = "Thành tiền";
             }
         }
 
@@ -378,13 +448,18 @@ namespace Demo
                 {
                     double dongia = Convert.ToDouble(dgvCTPhieuNhap.Rows[e.RowIndex].Cells["DonGiaNhap"].Value);
                     int soluong = Convert.ToInt32(dgvCTPhieuNhap.Rows[e.RowIndex].Cells["SLNhap"].Value);
+                    if (soluong < 0)
+                    {
+                        CustomMessageBox.Show("Số lượng không phù hợp tạo mã PN: " + dgvCTPhieuNhap.Rows[e.RowIndex].Cells["MaHDNhap"].Value + " và mã HH: " + dgvCTPhieuNhap.Rows[e.RowIndex].Cells["MaSP"].Value + ".");
+                        return;
+                    }
                     double thanhtien = dongia * soluong;
                     dgvCTPhieuNhap.Rows[e.RowIndex].Cells["ThanhTien"].Value = thanhtien;
                     btnLuu.Enabled = true;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
+                    CustomMessageBox.Show("Có lỗi khi tính toán lại thành tiền: " + ex.Message);
                 }
             }
         }
@@ -412,10 +487,15 @@ namespace Demo
                             dgvCTPhieuNhap.DataSource = kq;
                             dgvCTPhieuNhap.Columns[5].Visible = false;
                             dgvCTPhieuNhap.Columns[6].Visible = false;
+                            dgvCTPhieuNhap.Columns[0].HeaderText = "Mã hàng hóa";
+                            dgvCTPhieuNhap.Columns[1].HeaderText = "Mã phiếu xuất";
+                            dgvCTPhieuNhap.Columns[2].HeaderText = "Số lượng nhập";
+                            dgvCTPhieuNhap.Columns[3].HeaderText = "Đơn giá nhập";
+                            dgvCTPhieuNhap.Columns[4].HeaderText = "Thành tiền";
                         }
                     }
                 }
-                MessageBox.Show("Đã sản phẩm khỏi danh sách sản phẩm");
+                CustomMessageBox.Show("Đã sản phẩm khỏi danh sách sản phẩm");
             }
         }
     }

@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\",
+  "WorkspaceRootPath": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\hoc_ki_7_huit\\ptpm\\do_an\\ql_vlxd_git\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\daihoc\\hk7\\ptudpmtm\\da\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\demo\\frmloaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmloaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\hoc_ki_7_huit\\ptpm\\do_an\\ql_vlxd_git\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmloaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmloaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|d:\\daihoc\\hk7\\ptudpmtm\\da\\quanlyvatlieuxaydung\\damh_nhom_15\\source\\qlvlxd\\demo\\frmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A47FE60-E36F-4BA1-8ED3-017E7379C03B}|Demo\\GUI.csproj|solutionrelative:demo\\frmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,82 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmConfig.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmConfig.cs",
+              "RelativeDocumentMoniker": "Demo\\frmConfig.cs",
+              "ToolTip": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmConfig.cs",
+              "RelativeToolTip": "Demo\\frmConfig.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAowDcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:03:01.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmNhaCungCap.cs [Design]",
-              "DocumentMoniker": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmNhaCungCap.cs",
-              "RelativeDocumentMoniker": "Demo\\frmNhaCungCap.cs",
-              "ToolTip": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmNhaCungCap.cs [Design]",
-              "RelativeToolTip": "Demo\\frmNhaCungCap.cs [Design]",
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Demo\\frmLogin.cs",
+              "ToolTip": "D:\\DaiHoc\\HK7\\PTUDPMTM\\DA\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLogin.cs",
+              "RelativeToolTip": "Demo\\frmLogin.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAnwGIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:07:48.905Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmLoaiHang.cs [Design]",
-              "DocumentMoniker": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLoaiHang.cs",
-              "RelativeDocumentMoniker": "Demo\\frmLoaiHang.cs",
-              "ToolTip": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLoaiHang.cs [Design]",
-              "RelativeToolTip": "Demo\\frmLoaiHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T09:25:36.796Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmLoaiHang.cs",
-              "DocumentMoniker": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLoaiHang.cs",
-              "RelativeDocumentMoniker": "Demo\\frmLoaiHang.cs",
-              "ToolTip": "D:\\Hoc_Ki_7_HUIT\\PTPM\\Do_An\\QL_VLXD_Git\\QuanLyVatLieuXayDung\\DAMH_NHOM_15\\SOURCE\\QLVLXD\\Demo\\frmLoaiHang.cs",
-              "RelativeToolTip": "Demo\\frmLoaiHang.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwJoAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T09:28:53.542Z",
+              "WhenOpened": "2024-11-19T01:14:58.736Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 193,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             }
           ]
         }

@@ -1,0 +1,6 @@
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\UtilityTools\bin\Debug\UtilityTools.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\UtilityTools\bin\Debug\UtilityTools.pdb
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\UtilityTools\obj\Debug\UtilityTools.csproj.AssemblyReference.cache
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\UtilityTools\obj\Debug\UtilityTools.csproj.CoreCompileInputs.cache
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\UtilityTools\obj\Debug\UtilityTools.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\UtilityTools\obj\Debug\UtilityTools.pdb
