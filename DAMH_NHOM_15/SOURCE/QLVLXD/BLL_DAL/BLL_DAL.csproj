@@ -116,6 +116,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UtilityTools">
+      <HintPath>..\UtilityTools\bin\Debug\UtilityTools.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuNhapBLL.cs" />
@@ -128,6 +131,8 @@
     <Compile Include="HangHoaBLL.cs" />
     <Compile Include="KhachHangBLL.cs" />
     <Compile Include="LoaiHangBLL.cs" />
+    <Compile Include="NguoiDungBUS.cs" />
+    <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="NhaCungCapBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="PhieuNhapBLL.cs" />

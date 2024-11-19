@@ -48,6 +48,10 @@
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.tabChucNang = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.btnThoat = new MetroSet_UI.Controls.MetroSetButton();
+            this.txtTenNV = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.txtChucVu = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetTabControl1.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
             this.pnlButtonQL.SuspendLayout();
@@ -423,6 +427,10 @@
             // tabThongTin
             // 
             this.tabThongTin.BaseColor = System.Drawing.Color.White;
+            this.tabThongTin.Controls.Add(this.txtChucVu);
+            this.tabThongTin.Controls.Add(this.metroSetLabel3);
+            this.tabThongTin.Controls.Add(this.txtTenNV);
+            this.tabThongTin.Controls.Add(this.metroSetLabel2);
             this.tabThongTin.Controls.Add(this.txtMaNV);
             this.tabThongTin.Controls.Add(this.metroSetLabel1);
             this.tabThongTin.Font = null;
@@ -530,6 +538,94 @@
             this.btnThoat.ThemeName = "MetroLight";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // txtTenNV
+            // 
+            this.txtTenNV.AutoCompleteCustomSource = null;
+            this.txtTenNV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtTenNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtTenNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txtTenNV.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtTenNV.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txtTenNV.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.txtTenNV.Enabled = false;
+            this.txtTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTenNV.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtTenNV.Image = null;
+            this.txtTenNV.IsDerivedStyle = true;
+            this.txtTenNV.Lines = null;
+            this.txtTenNV.Location = new System.Drawing.Point(283, 54);
+            this.txtTenNV.MaxLength = 32767;
+            this.txtTenNV.Multiline = false;
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.ReadOnly = false;
+            this.txtTenNV.Size = new System.Drawing.Size(205, 26);
+            this.txtTenNV.Style = MetroSet_UI.Enums.Style.Light;
+            this.txtTenNV.StyleManager = null;
+            this.txtTenNV.TabIndex = 3;
+            this.txtTenNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTenNV.ThemeAuthor = "Narwin";
+            this.txtTenNV.ThemeName = "MetroLite";
+            this.txtTenNV.UseSystemPasswordChar = false;
+            this.txtTenNV.WatermarkText = "";
+            // 
+            // metroSetLabel2
+            // 
+            this.metroSetLabel2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.metroSetLabel2.IsDerivedStyle = true;
+            this.metroSetLabel2.Location = new System.Drawing.Point(157, 54);
+            this.metroSetLabel2.Name = "metroSetLabel2";
+            this.metroSetLabel2.Size = new System.Drawing.Size(129, 26);
+            this.metroSetLabel2.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel2.StyleManager = null;
+            this.metroSetLabel2.TabIndex = 2;
+            this.metroSetLabel2.Text = "Tên nhân viên";
+            this.metroSetLabel2.ThemeAuthor = "Narwin";
+            this.metroSetLabel2.ThemeName = "MetroLite";
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.AutoCompleteCustomSource = null;
+            this.txtChucVu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtChucVu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtChucVu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txtChucVu.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtChucVu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txtChucVu.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.txtChucVu.Enabled = false;
+            this.txtChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtChucVu.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtChucVu.Image = null;
+            this.txtChucVu.IsDerivedStyle = true;
+            this.txtChucVu.Lines = null;
+            this.txtChucVu.Location = new System.Drawing.Point(283, 93);
+            this.txtChucVu.MaxLength = 32767;
+            this.txtChucVu.Multiline = false;
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.ReadOnly = false;
+            this.txtChucVu.Size = new System.Drawing.Size(205, 26);
+            this.txtChucVu.Style = MetroSet_UI.Enums.Style.Light;
+            this.txtChucVu.StyleManager = null;
+            this.txtChucVu.TabIndex = 5;
+            this.txtChucVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtChucVu.ThemeAuthor = "Narwin";
+            this.txtChucVu.ThemeName = "MetroLite";
+            this.txtChucVu.UseSystemPasswordChar = false;
+            this.txtChucVu.WatermarkText = "";
+            // 
+            // metroSetLabel3
+            // 
+            this.metroSetLabel3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.metroSetLabel3.IsDerivedStyle = true;
+            this.metroSetLabel3.Location = new System.Drawing.Point(157, 93);
+            this.metroSetLabel3.Name = "metroSetLabel3";
+            this.metroSetLabel3.Size = new System.Drawing.Size(129, 26);
+            this.metroSetLabel3.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel3.StyleManager = null;
+            this.metroSetLabel3.TabIndex = 4;
+            this.metroSetLabel3.Text = "Chức vụ";
+            this.metroSetLabel3.ThemeAuthor = "Narwin";
+            this.metroSetLabel3.ThemeName = "MetroLite";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 22F);
@@ -573,5 +669,9 @@
         private MetroSet_UI.Controls.MetroSetTextBox txtMaNV;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private MetroSet_UI.Controls.MetroSetButton btnNhapHang;
+        private MetroSet_UI.Controls.MetroSetTextBox txtTenNV;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
+        private MetroSet_UI.Controls.MetroSetTextBox txtChucVu;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
     }
 }

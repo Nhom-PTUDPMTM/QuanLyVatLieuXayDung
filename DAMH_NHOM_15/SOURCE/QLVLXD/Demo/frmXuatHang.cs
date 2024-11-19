@@ -352,7 +352,7 @@ namespace Demo
         private void btnInPhieu_Click(object sender, EventArgs e)
         {
             PhieuXuat phieu = px.getByCode(txtMaPhieuXuat.Text);
-            DataTable dt = ctpx.toPrint(phieu.MaHDXuat);
+            DataTable dt = ctpx.toPrint(phieu.MaHDXuat.Trim());
             dt.PrimaryKey = null;
             DataColumn col = new DataColumn("STT", typeof(int));
             dt.Columns.Add(col);
@@ -391,7 +391,7 @@ namespace Demo
             dic.Add("TongTien", phieu.ThanhTien.ToString());
             dic.Add("TongTienChu", ConvertUltil.ConvertNumberToString(int.Parse(phieu.ThanhTien.ToString())));
             dic.Add("NguoiLapPhieu", nvv.TenNV.ToString());
-            WordExport wd = new WordExport(Application.StartupPath + "\\pxx.dotx", true);
+            WordExport wd = new WordExport(Application.StartupPath + "\\pxh.dotx", true);
             wd.WriteFields(dic);
             wd.WriteTable(dt, 1);
             CustomMessageBox.Show("Xuất xong !!");

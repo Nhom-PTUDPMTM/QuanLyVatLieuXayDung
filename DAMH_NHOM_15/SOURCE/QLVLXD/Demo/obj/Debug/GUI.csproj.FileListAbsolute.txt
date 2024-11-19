@@ -108,3 +108,6 @@ D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\o
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmNhaCungCap.resources
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmNhanVien.resources
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmXuatHang.resources
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\UtilityTools.dll
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\bin\Debug\UtilityTools.pdb
+D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\Demo\obj\Debug\Demo.frmConfig.resources
