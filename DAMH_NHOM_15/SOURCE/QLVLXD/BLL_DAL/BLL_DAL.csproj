@@ -127,10 +127,13 @@
     <Compile Include="CungUngBLL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DatHangBLL.cs" />
+    <Compile Include="DonHangDAL.cs" />
+    <Compile Include="DuDoanBLL.cs" />
     <Compile Include="GiaoHangBLL.cs" />
     <Compile Include="HangHoaBLL.cs" />
     <Compile Include="KhachHangBLL.cs" />
     <Compile Include="LoaiHangBLL.cs" />
+    <Compile Include="ManHinhBLL.cs" />
     <Compile Include="NguoiDungBUS.cs" />
     <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="NhaCungCapBLL.cs" />

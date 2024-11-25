@@ -5,3 +5,10 @@ D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\ob
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.dll
 D:\DaiHoc\HK7\PTUDPMTM\DA\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.pdb
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.dll
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DAL.pdb
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\bin\Debug\DAL.dll.config
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\bin\Debug\DAL.dll
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\bin\Debug\DAL.pdb
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Hoc_Ki_7_HUIT\PTPM\Do_An\QuanLyVatLieuXayDung\DAMH_NHOM_15\SOURCE\QLVLXD\DAL\obj\Debug\DTO.csproj.CoreCompileInputs.cache

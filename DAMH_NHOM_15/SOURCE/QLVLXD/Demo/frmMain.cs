@@ -181,5 +181,16 @@ namespace Demo
             pnlFormQL.Controls.Add(frm);
             frm.Show();
         }
+
+        private void btnManHinh_Click(object sender, EventArgs e)
+        {
+            pnlFormQL.Controls.Clear();
+            frmDuDoan frm = new frmDuDoan();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            pnlFormQL.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

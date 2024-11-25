@@ -174,6 +174,12 @@
     <Compile Include="frmDatHang.Designer.cs">
       <DependentUpon>frmDatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDuDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDuDoan.Designer.cs">
+      <DependentUpon>frmDuDoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGiaoHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManHinh.Designer.cs">
+      <DependentUpon>frmManHinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhaCungCap.cs">
       <SubType>Form</SubType>
@@ -251,6 +263,9 @@
     <EmbeddedResource Include="frmDatHang.resx">
       <DependentUpon>frmDatHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDuDoan.resx">
+      <DependentUpon>frmDuDoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoHang.resx">
       <DependentUpon>frmGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManHinh.resx">
+      <DependentUpon>frmManHinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>

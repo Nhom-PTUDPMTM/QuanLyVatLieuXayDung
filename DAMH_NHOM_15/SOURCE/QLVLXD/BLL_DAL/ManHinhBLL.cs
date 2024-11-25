@@ -1,52 +1,22 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Numerics.Tensors;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 
 namespace BLL_DAL
 {
-    public class NhaCungCapBLL
+    public class ManHinhBLL
     {
         VLXDDataContext vlxd = new VLXDDataContext();
-
-        public DataTable getCodeAndName()
-        {
-            DataTable dt = new DataTable();
-            var kq = from tcs in vlxd.NhaCCs
-                     select new
-                     {
-                         MaNCC = tcs.MaNCC,
-                         TenNCC = tcs.TenNCC
-                     };
-            if (kq.Any())
-            {
-                var firstItem = kq.First();
-                foreach (var prop in firstItem.GetType().GetProperties())
-                {
-                    dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-                }
-                foreach (var item in kq)
-                {
-                    var row = dt.NewRow();
-                    foreach (var prop in item.GetType().GetProperties())
-                    {
-                        row[prop.Name] = prop.GetValue(item, null) ?? DBNull.Value;
-                    }
-                    dt.Rows.Add(row);
-                }
-            }
-            return dt;
-        }
 
         public DataTable getAllByCode(string code)
         {
             DataTable dt = new DataTable();
-            var kq = from tcs in vlxd.NhaCCs
-                     where tcs.MaNCC == code
+            var kq = from tcs in vlxd.ManHinhs
+                     where tcs.MaMH == code
                      select tcs;
             if (kq.Any())
             {
@@ -70,12 +40,12 @@ namespace BLL_DAL
 
         public DataTable getAll()
         {
-            var kq = from tcs in vlxd.NhaCCs select tcs;
+            var kq = from tcs in vlxd.ManHinhs select tcs;
 
             if (!kq.Any()) return null;
 
             var dt = new DataTable();
-            foreach (var prop in typeof(NhaCC).GetProperties())
+            foreach (var prop in typeof(ManHinh).GetProperties())
             {
                 dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
             }
@@ -93,27 +63,27 @@ namespace BLL_DAL
         }
 
 
-        public NhaCC getByCode(string code)
+        public ManHinh getByCode(string code)
         {
-            return vlxd.NhaCCs.Where(t => t.MaNCC == code).FirstOrDefault();
+            return vlxd.ManHinhs.Where(t => t.MaMH == code).FirstOrDefault();
         }
 
-        public string GetNextMaNCC()
+        public string GetNextMaMH()
         {
-            // Lấy giá trị MaNCC lớn nhất hiện tại trong danh sách nhà cung cấp
-            var maxMaNCC = vlxd.NhaCCs
-                .OrderByDescending(t => t.MaNCC)
-                .FirstOrDefault()?.MaNCC;
+            // Lấy giá trị MaMH lớn nhất hiện tại trong danh sách nhà cung cấp
+            var maxMaMH = vlxd.ManHinhs
+                .OrderByDescending(t => t.MaMH)
+                .FirstOrDefault()?.MaMH;
 
-            if (maxMaNCC == null)
+            if (maxMaMH == null)
             {
-                // Nếu không có mã nhà cung cấp nào, trả về mã mặc định
-                return "NCC001";
+                // Nếu không có mã màn hình nào, trả về mã mặc định
+                return "MH001";
             }
 
-            //Dạng Mã Nhà Cung Cấp là 'NCC001'
-            string prefix = new string(maxMaNCC.TakeWhile(char.IsLetter).ToArray());
-            string numberPart = maxMaNCC.Substring(prefix.Length);
+            //Dạng Mã Nhà Cung Cấp là 'MH001'
+            string prefix = new string(maxMaMH.TakeWhile(char.IsLetter).ToArray());
+            string numberPart = maxMaMH.Substring(prefix.Length);
 
             if (int.TryParse(numberPart, out int number))
             {
@@ -122,18 +92,18 @@ namespace BLL_DAL
                 return $"{prefix}{number:D3}"; // D3 định dạng số có 3 chữ số
             }
 
-            throw new InvalidOperationException("Invalid MaNCC format.");
+            throw new InvalidOperationException("Invalid MaMH format.");
         }
 
 
-        public bool addItemNCC(NhaCC a)
+        public bool addItemMH(ManHinh a)
         {
             bool b = false;
             if (a != null)
             {
                 try
                 {
-                    vlxd.NhaCCs.InsertOnSubmit(a);
+                    vlxd.ManHinhs.InsertOnSubmit(a);
                     vlxd.SubmitChanges();
                     b = true;
                 }
@@ -145,16 +115,14 @@ namespace BLL_DAL
             return b;
         }
 
-        public bool updateItemNCC(NhaCC a, NhaCC d)
+        public bool updateItemMH(ManHinh a, ManHinh d)
         {
             try
             {
                 // Câu truy vấn SQL để cập nhật thông tin nhà cung cấp
-                string query = string.Format("UPDATE NhaCC SET TenNCC = '{1}', DiaChi = '{2}', SDT = '{3}' WHERE MaNCC = '{0}'",
-                                            a.MaNCC,
-                                            d.TenNCC != null && d.TenNCC != "" ? d.TenNCC : a.TenNCC, // Kiểm tra nếu d.TenNCC có giá trị thì cập nhật, nếu không dùng a.TenNCC
-                                            d.DiaChi != null && d.DiaChi != "" ? d.DiaChi : a.DiaChi, // Tương tự cho DiaChi
-                                            d.SDT != null && d.SDT != "" ? d.SDT : a.SDT); // Tương tự cho SDT
+                string query = string.Format("UPDATE ManHinh SET TenMH = '{1}' WHERE MaMH = '{0}'",
+                                            a.MaMH,
+                                            d.TenMH != null && d.TenMH != "" ? d.TenMH : a.TenMH);
 
                 // Thực thi câu truy vấn
                 int result = DataProvider.Instance.executeNonQuery(query);
@@ -169,15 +137,14 @@ namespace BLL_DAL
                 return false;
             }
         }
-
-        public bool deleteItemNCC(NhaCC a)
+        public bool deleteItemMH(ManHinh a)
         {
             bool b = false;
             if (a != null)
             {
                 try
                 {
-                    vlxd.NhaCCs.DeleteOnSubmit(a);
+                    vlxd.ManHinhs.DeleteOnSubmit(a);
                     vlxd.SubmitChanges();
                     b = true;
                 }
@@ -188,6 +155,7 @@ namespace BLL_DAL
             }
             return b;
         }
+
 
     }
 }
