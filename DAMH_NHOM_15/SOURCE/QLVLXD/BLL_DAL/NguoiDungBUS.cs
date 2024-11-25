@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-using DAL;
+using DTO;
 using UtilityTools;
 
 namespace BLL_DAL

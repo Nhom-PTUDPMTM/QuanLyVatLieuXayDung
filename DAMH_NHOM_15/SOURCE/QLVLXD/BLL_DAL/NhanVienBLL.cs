@@ -1,4 +1,4 @@
-﻿using DAL;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +26,10 @@ namespace BLL_DAL
             dt.Columns.Add("DiaChi");
             dt.Columns.Add("SDT");
             dt.Columns.Add("ChucVu");
+            dt.Columns.Add("MaVT");
             foreach (NhanVien nv in vlxd.NhanViens)
             {
-                dt.Rows.Add(nv.MaNV, nv.TenNV, nv.MatKhau, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SDT, nv.ChucVu);
+                dt.Rows.Add(nv.MaNV, nv.TenNV, nv.MatKhau, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SDT, nv.ChucVu, nv.MaVT);
             }
             return dt;
         }
@@ -48,7 +49,7 @@ namespace BLL_DAL
             }
         }
 
-        public bool addNV(string maNV, string tenNV, string diaChi, string soDienThoai, string mk, string gt, string cv, string ngaysinh)
+        public bool addNV(string maNV, string tenNV, string diaChi, string soDienThoai, string mk, string gt, string cv, string ngaysinh, string maVT)
         {
             try
             {
@@ -61,8 +62,8 @@ namespace BLL_DAL
                     MatKhau = mk,
                     GioiTinh = gt,
                     ChucVu = cv,
-                    NgaySinh = DateTime.Parse(ngaysinh)
-
+                    NgaySinh = DateTime.Parse(ngaysinh),
+                    MaVT = maVT
                 };
                 vlxd.NhanViens.InsertOnSubmit(nv);
                 vlxd.SubmitChanges();
@@ -73,7 +74,7 @@ namespace BLL_DAL
                 return false;
             }
         }
-        public bool updateNV(string maNV, string tenNV, string diaChi, string soDienThoai, string mk, string gt, string cv, string ngaysinh)
+        public bool updateNV(string maNV, string tenNV, string diaChi, string soDienThoai, string mk, string gt, string cv, string ngaysinh, string maVT)
         {
             try
             {
@@ -87,6 +88,7 @@ namespace BLL_DAL
                     nv.GioiTinh = gt;
                     nv.ChucVu = cv;
                     nv.NgaySinh = DateTime.Parse(ngaysinh);
+                    nv.MaVT = maVT;
                     vlxd.SubmitChanges();
                     return true;
                 }
@@ -115,12 +117,12 @@ namespace BLL_DAL
             dt.Columns.Add("DiaChi");
             dt.Columns.Add("SDT");
             dt.Columns.Add("ChucVu");
-
+            dt.Columns.Add("MaVT");
 
             var results = vlxd.NhanViens.Where(nv => nv.TenNV.Contains(tenNV)).ToList();
             foreach (var nv in results)
             {
-                dt.Rows.Add(nv.MaNV, nv.TenNV, nv.MatKhau, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SDT, nv.ChucVu);
+                dt.Rows.Add(nv.MaNV, nv.TenNV, nv.MatKhau, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SDT, nv.ChucVu, nv.MaVT);
             }
             return dt;
         }

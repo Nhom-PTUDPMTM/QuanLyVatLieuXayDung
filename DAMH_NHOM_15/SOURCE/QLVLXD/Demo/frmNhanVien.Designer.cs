@@ -52,6 +52,8 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboVaiTro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,11 +213,11 @@
             // dgvDS
             // 
             this.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDS.Location = new System.Drawing.Point(16, 385);
+            this.dgvDS.Location = new System.Drawing.Point(16, 397);
             this.dgvDS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDS.Name = "dgvDS";
             this.dgvDS.RowHeadersWidth = 62;
-            this.dgvDS.Size = new System.Drawing.Size(879, 154);
+            this.dgvDS.Size = new System.Drawing.Size(879, 142);
             this.dgvDS.TabIndex = 54;
             this.dgvDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDS_CellClick);
             this.dgvDS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDS_CellContentClick);
@@ -298,11 +300,32 @@
             this.label11.TabIndex = 104;
             this.label11.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(469, 362);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 18);
+            this.label9.TabIndex = 105;
+            this.label9.Text = "Vai trò";
+            // 
+            // cboVaiTro
+            // 
+            this.cboVaiTro.FormattingEnabled = true;
+            this.cboVaiTro.Location = new System.Drawing.Point(571, 352);
+            this.cboVaiTro.Name = "cboVaiTro";
+            this.cboVaiTro.Size = new System.Drawing.Size(298, 28);
+            this.cboVaiTro.TabIndex = 106;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 617);
+            this.Controls.Add(this.cboVaiTro);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.txtTimKiem);
@@ -361,5 +384,7 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboVaiTro;
     }
 }

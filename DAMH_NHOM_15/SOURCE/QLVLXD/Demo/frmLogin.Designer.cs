@@ -104,9 +104,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(9, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Password:";
+            this.label3.Text = "Mật khẩu:";
             // 
             // label2
             // 
@@ -115,9 +115,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(9, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Username:";
+            this.label2.Text = "Tài khoản:";
             // 
             // label1
             // 
@@ -126,9 +126,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(80, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 30);
+            this.label1.Size = new System.Drawing.Size(142, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "LOGIN";
+            this.label1.Text = "ĐĂNG NHẬP";
             // 
             // frmLogin
             // 

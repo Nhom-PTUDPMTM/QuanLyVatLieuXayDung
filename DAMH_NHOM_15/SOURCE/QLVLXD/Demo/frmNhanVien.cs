@@ -1,5 +1,5 @@
 ﻿using BLL_DAL;
-using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +16,7 @@ namespace Demo
     public partial class frmNhanVien : MetroSet_UI.Forms.MetroSetForm
     {
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        VaiTroBLL vaiTroBLL = new VaiTroBLL();
         public frmNhanVien()
         {
             InitializeComponent();
@@ -41,6 +42,12 @@ namespace Demo
                 dgvDS.Columns["DiaChi"].HeaderText = "Địa chỉ";
                 dgvDS.Columns["SDT"].HeaderText = "Số điện thoại";
                 dgvDS.Columns["ChucVu"].HeaderText = "Chức vụ";
+                dgvDS.Columns["MaVT"].HeaderText = "Mã vai trò";
+                DataTable dt2 = vaiTroBLL.getAll();
+                cboVaiTro.DataSource = null;
+                cboVaiTro.DataSource = dt2;
+                cboVaiTro.DisplayMember = "TenVaiTro";
+                cboVaiTro.ValueMember = "MaVaiTro";
             }
             catch (Exception ex)
             {
@@ -51,7 +58,7 @@ namespace Demo
 
         private void button5_Click(object sender, EventArgs e)
         {
-            bool result = nhanVienBLL.addNV(txtMaNV.Text, txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, txtMatKhau.Text, txtGioiTinh.Text, txtChucvu.Text, dtpNgaySinh.Text);
+            bool result = nhanVienBLL.addNV(txtMaNV.Text, txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, txtMatKhau.Text, txtGioiTinh.Text, txtChucvu.Text, dtpNgaySinh.Text, cboVaiTro.SelectedValue.ToString());
             if (result)
             {
                 CustomMessageBox.Show("Thêm nhân viên thành công!");
@@ -101,7 +108,7 @@ namespace Demo
         //sua
         private void button3_Click(object sender, EventArgs e)
         {
-            bool result = nhanVienBLL.updateNV(txtMaNV.Text, txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, txtMatKhau.Text, txtGioiTinh.Text, txtChucvu.Text, dtpNgaySinh.Text);
+            bool result = nhanVienBLL.updateNV(txtMaNV.Text, txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, txtMatKhau.Text, txtGioiTinh.Text, txtChucvu.Text, dtpNgaySinh.Text, cboVaiTro.SelectedValue.ToString());
             if (result)
             {
                 CustomMessageBox.Show("Cập nhật nhân viên thành công!");

@@ -40,7 +40,8 @@ CREATE TABLE [NhanVien] (
   [NgaySinh] date,
   [DiaChi] nvarchar(30),
   [SDT] varchar(20),
-  [ChucVu] nvarchar(20)
+  [ChucVu] nvarchar(20),
+  [MaVT] char(10)
 )
 GO
 
@@ -131,6 +132,23 @@ CREATE TABLE [ChiTietGiaoHang] (
 )
 GO
 
+CREATE TABLE [VaiTro](
+	[MaVaiTro] char(10) PRIMARY KEY,
+	[TenVaiTro] nvarchar(50)
+)
+
+CREATE TABLE [ManHinh](
+	[MaMH] char(10) PRIMARY KEY,
+	[TenMH] nvarchar(100)
+)
+
+CREATE TABLE [PhanQuyen](
+	[MaVaiTro] char(10),
+	[MaMH] char(10),
+	[HoatDong] int, -- Hoạt động là 1, Không hoạt động là 0
+	PRIMARY KEY ([MaVaiTro], [MaMH])
+)
+
 ALTER TABLE [HangHoa] ADD CONSTRAINT [fk_HangHoa_LoaiHang] FOREIGN KEY ([MaLoai]) REFERENCES [LoaiHang] ([MaLoai])
 GO
 
@@ -179,7 +197,16 @@ GO
 ALTER TABLE [ChiTietGiaoHang] ADD CONSTRAINT [fk_ChiTietGiaoHang_SanPham] FOREIGN KEY ([MaSP]) REFERENCES [HangHoa] ([MaHH])
 GO
 
+ALTER TABLE [NhanVien] ADD CONSTRAINT [fk_NhanVien_VaiTro] FOREIGN KEY ([MaVT]) REFERENCES [VaiTro] ([MaVaiTro])
+GO
+
 ALTER TABLE [ChiTietGiaoHang] ADD CONSTRAINT [fk_ChiTietGiaoHang_NhanVien] FOREIGN KEY ([MaNV]) REFERENCES [NhanVien] ([MaNV])
+GO
+
+ALTER TABLE [PhanQuyen] ADD CONSTRAINT [fk_PhanQuyen_VaiTro] FOREIGN KEY ([MaVaiTro]) REFERENCES [VaiTro] ([MaVaiTro])
+GO
+
+ALTER TABLE [PhanQuyen] ADD CONSTRAINT [fk_PhanQuyen_ManHinh] FOREIGN KEY ([MaMH]) REFERENCES [ManHinh] ([MaMH])
 GO
 
 
@@ -207,13 +234,95 @@ VALUES
 ('KH004', 'Bob Brown', 'password4', 'Male', '1975-03-10', '321 Pine St', '0912345681', 'Wholesale'),
 ('KH005', 'Charlie Green', 'password5', 'Male', '1995-08-12', '654 Cedar St', '0912345682', 'Retail');
 
-INSERT INTO NhanVien (MaNV, TenNV, MatKhau, GioiTinh, NgaySinh, DiaChi, SDT, ChucVu) 
+INSERT INTO VaiTro (MaVaiTro, TenVaiTro)
+VALUES
+('VT000', N'Admin'),
+('VT001', N'Staff'),
+('VT002', N'Manager of store'),
+('VT003', N'Supervisor')
+
+INSERT INTO ManHinh (MaMH, TenMH)
+VALUES
+('MH001', N'frmCungUng'),
+('MH002', N'frmDatHang'),
+('MH003', N'frmGiaoHang'),
+('MH004', N'frmHangHoa'),
+('MH005', N'frmKhachHang'),
+('MH006', N'frmLoaiHang'),
+('MH007', N'frmNhaCungCap'),
+('MH008', N'frmNhanVien'),
+('MH009', N'frmNhapHang'),
+('MH010', N'frmXuatHang'),
+('MH011', N'frmVaiTro'),
+('MH012', N'frmManHinh'),
+('MH013', N'frmPhanQuyen')
+
+INSERT INTO PhanQuyen (MaVaiTro, MaMH, HoatDong)
+VALUES
+('VT000', 'MH001', 1),
+('VT000', 'MH002', 1),
+('VT000', 'MH003', 1),
+('VT000', 'MH004', 1),
+('VT000', 'MH005', 1),
+('VT000', 'MH006', 1),
+('VT000', 'MH007', 1),
+('VT000', 'MH008', 1),
+('VT000', 'MH009', 1),
+('VT000', 'MH010', 1),
+('VT000', 'MH011', 1),
+('VT000', 'MH012', 1),
+('VT000', 'MH013', 1),
+
+('VT001', 'MH001', 1),
+('VT001', 'MH002', 1),
+('VT001', 'MH003', 0),
+('VT001', 'MH004', 1),
+('VT001', 'MH005', 1),
+('VT001', 'MH006', 1),
+('VT001', 'MH007', 0),
+('VT001', 'MH008', 1),
+('VT001', 'MH009', 1),
+('VT001', 'MH010', 0),
+('VT001', 'MH011', 0),
+('VT001', 'MH012', 0),
+('VT001', 'MH013', 0),
+
+('VT002', 'MH001', 1),
+('VT002', 'MH002', 1),
+('VT002', 'MH003', 1),
+('VT002', 'MH004', 1),
+('VT002', 'MH005', 1),
+('VT002', 'MH006', 1),
+('VT002', 'MH007', 1),
+('VT002', 'MH008', 1),
+('VT002', 'MH009', 1),
+('VT002', 'MH010', 1),
+('VT002', 'MH011', 0),
+('VT002', 'MH012', 0),
+('VT002', 'MH013', 0),
+
+('VT003', 'MH001', 1),
+('VT003', 'MH002', 0),
+('VT003', 'MH003', 1),
+('VT003', 'MH004', 1),
+('VT003', 'MH005', 1),
+('VT003', 'MH006', 1),
+('VT003', 'MH007', 1),
+('VT003', 'MH008', 0),
+('VT003', 'MH009', 1),
+('VT003', 'MH010', 1),
+('VT003', 'MH011', 1),
+('VT003', 'MH012', 1),
+('VT003', 'MH013', 0)
+
+
+INSERT INTO NhanVien (MaNV, TenNV, MatKhau, GioiTinh, NgaySinh, DiaChi, SDT, ChucVu, MaVT) 
 VALUES 
-('NV001', 'David Lee', 'nvpassword1', 'Male', '1980-01-01', '987 Maple St', '0912345683', 'Manager'),
-('NV002', 'Emily Davis', 'nvpassword2', 'Female', '1987-02-02', '654 Birch St', '0912345684', 'Staff'),
-('NV003', 'Frank Wilson', 'nvpassword3', 'Male', '1992-03-03', '321 Spruce St', '0912345685', 'Staff'),
-('NV004', 'Grace Young', 'nvpassword4', 'Female', '1994-04-04', '789 Fir St', '0912345686', 'Supervisor'),
-('NV005', 'Henry Walker', 'nvpassword5', 'Male', '1985-05-05', '123 Willow St', '0912345687', 'Staff');
+('NV001', 'David Lee', 'nvpassword1', 'Male', '1980-01-01', '987 Maple St', '0912345683', 'Manager', 'VT002'),
+('NV002', 'Emily Davis', 'nvpassword2', 'Female', '1987-02-02', '654 Birch St', '0912345684', 'Staff', 'VT001'),
+('NV003', 'Frank Wilson', 'nvpassword3', 'Male', '1992-03-03', '321 Spruce St', '0912345685', 'Staff', 'VT001'),
+('NV004', 'Grace Young', 'nvpassword4', 'Female', '1994-04-04', '789 Fir St', '0912345686', 'Supervisor', 'VT003'),
+('NV005', 'Henry Walker', 'nvpassword5', 'Male', '1985-05-05', '123 Willow St', '0912345687', 'Staff', 'VT001');
 
 INSERT INTO PhieuXuat (MaHDXuat, MaKH, MaNV, NgayXuat, TinhTrang, ThanhTien) 
 VALUES 

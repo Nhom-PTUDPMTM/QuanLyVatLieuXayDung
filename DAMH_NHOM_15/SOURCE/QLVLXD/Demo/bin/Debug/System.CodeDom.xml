@@ -324,23 +324,23 @@
     <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor(System.CodeDom.CodeTypeReference)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class using the specified code type reference.</summary>
-      <param name="attributeType">The <see cref="T:System.CodeDom.CodeTypeReference" /> that identifies the attribute.</param>
-    </member>
     <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor(System.CodeDom.CodeTypeReference,System.CodeDom.CodeAttributeArgument[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class using the specified code type reference and arguments.</summary>
       <param name="attributeType">The <see cref="T:System.CodeDom.CodeTypeReference" /> that identifies the attribute.</param>
       <param name="arguments">An array of type <see cref="T:System.CodeDom.CodeAttributeArgument" /> that contains the arguments for the attribute.</param>
     </member>
-    <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class using the specified name.</summary>
-      <param name="name">The name of the attribute.</param>
+    <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor(System.CodeDom.CodeTypeReference)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class using the specified code type reference.</summary>
+      <param name="attributeType">The <see cref="T:System.CodeDom.CodeTypeReference" /> that identifies the attribute.</param>
     </member>
     <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor(System.String,System.CodeDom.CodeAttributeArgument[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class using the specified name and arguments.</summary>
       <param name="name">The name of the attribute.</param>
       <param name="arguments">An array of type <see cref="T:System.CodeDom.CodeAttributeArgument" /> that contains the arguments for the attribute.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeAttributeDeclaration.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeAttributeDeclaration" /> class using the specified name.</summary>
+      <param name="name">The name of the attribute.</param>
     </member>
     <member name="P:System.CodeDom.CodeAttributeDeclaration.Arguments">
       <summary>Gets the arguments for the attribute.</summary>
@@ -546,20 +546,20 @@
     <member name="M:System.CodeDom.CodeCatchClause.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCatchClause" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeCatchClause.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCatchClause" /> class using the specified local variable name for the exception.</summary>
+    <member name="M:System.CodeDom.CodeCatchClause.#ctor(System.String,System.CodeDom.CodeTypeReference,System.CodeDom.CodeStatement[])">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCatchClause" /> class using the specified local variable name for the exception, exception type and statement collection.</summary>
       <param name="localName">The name of the local variable declared in the catch clause for the exception. This is optional.</param>
+      <param name="catchExceptionType">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the type of exception to catch.</param>
+      <param name="statements">An array of <see cref="T:System.CodeDom.CodeStatement" /> objects that represent the contents of the catch block.</param>
     </member>
     <member name="M:System.CodeDom.CodeCatchClause.#ctor(System.String,System.CodeDom.CodeTypeReference)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCatchClause" /> class using the specified local variable name for the exception and exception type.</summary>
       <param name="localName">The name of the local variable declared in the catch clause for the exception. This is optional.</param>
       <param name="catchExceptionType">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the type of exception to catch.</param>
     </member>
-    <member name="M:System.CodeDom.CodeCatchClause.#ctor(System.String,System.CodeDom.CodeTypeReference,System.CodeDom.CodeStatement[])">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCatchClause" /> class using the specified local variable name for the exception, exception type and statement collection.</summary>
+    <member name="M:System.CodeDom.CodeCatchClause.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCatchClause" /> class using the specified local variable name for the exception.</summary>
       <param name="localName">The name of the local variable declared in the catch clause for the exception. This is optional.</param>
-      <param name="catchExceptionType">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the type of exception to catch.</param>
-      <param name="statements">An array of <see cref="T:System.CodeDom.CodeStatement" /> objects that represent the contents of the catch block.</param>
     </member>
     <member name="P:System.CodeDom.CodeCatchClause.CatchExceptionType">
       <summary>Gets or sets the type of the exception to handle with the catch block.</summary>
@@ -676,15 +676,15 @@
     <member name="M:System.CodeDom.CodeComment.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeComment" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeComment.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeComment" /> class with the specified text as contents.</summary>
-      <param name="text">The contents of the comment.</param>
-    </member>
     <member name="M:System.CodeDom.CodeComment.#ctor(System.String,System.Boolean)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeComment" /> class using the specified text and documentation comment flag.</summary>
       <param name="text">The contents of the comment.</param>
       <param name="docComment">
         <see langword="true" /> if the comment is a documentation comment; otherwise, <see langword="false" />.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeComment.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeComment" /> class with the specified text as contents.</summary>
+      <param name="text">The contents of the comment.</param>
     </member>
     <member name="P:System.CodeDom.CodeComment.DocComment">
       <summary>Gets or sets a value that indicates whether the comment is a documentation comment.</summary>
@@ -705,15 +705,15 @@
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCommentStatement" /> class using the specified comment.</summary>
       <param name="comment">A <see cref="T:System.CodeDom.CodeComment" /> that indicates the comment.</param>
     </member>
-    <member name="M:System.CodeDom.CodeCommentStatement.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCommentStatement" /> class using the specified text as contents.</summary>
-      <param name="text">The contents of the comment.</param>
-    </member>
     <member name="M:System.CodeDom.CodeCommentStatement.#ctor(System.String,System.Boolean)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCommentStatement" /> class using the specified text and documentation comment flag.</summary>
       <param name="text">The contents of the comment.</param>
       <param name="docComment">
         <see langword="true" /> if the comment is a documentation comment; otherwise, <see langword="false" />.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeCommentStatement.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeCommentStatement" /> class using the specified text as contents.</summary>
+      <param name="text">The contents of the comment.</param>
     </member>
     <member name="P:System.CodeDom.CodeCommentStatement.Comment">
       <summary>Gets or sets the contents of the comment.</summary>
@@ -824,16 +824,16 @@
     <member name="M:System.CodeDom.CodeConditionStatement.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeConditionStatement" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeConditionStatement.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeStatement[])">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeConditionStatement" /> class using the specified condition and statements.</summary>
-      <param name="condition">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the expression to evaluate.</param>
-      <param name="trueStatements">An array of type <see cref="T:System.CodeDom.CodeStatement" /> containing the statements to execute if the condition is <see langword="true" />.</param>
-    </member>
     <member name="M:System.CodeDom.CodeConditionStatement.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeStatement[],System.CodeDom.CodeStatement[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeConditionStatement" /> class using the specified condition and statements.</summary>
       <param name="condition">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the condition to evaluate.</param>
       <param name="trueStatements">An array of type <see cref="T:System.CodeDom.CodeStatement" /> containing the statements to execute if the condition is <see langword="true" />.</param>
       <param name="falseStatements">An array of type <see cref="T:System.CodeDom.CodeStatement" /> containing the statements to execute if the condition is <see langword="false" />.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeConditionStatement.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeStatement[])">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeConditionStatement" /> class using the specified condition and statements.</summary>
+      <param name="condition">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the expression to evaluate.</param>
+      <param name="trueStatements">An array of type <see cref="T:System.CodeDom.CodeStatement" /> containing the statements to execute if the condition is <see langword="true" />.</param>
     </member>
     <member name="P:System.CodeDom.CodeConditionStatement.Condition">
       <summary>Gets or sets the expression to evaluate <see langword="true" /> or <see langword="false" />.</summary>
@@ -905,14 +905,14 @@
     <member name="M:System.CodeDom.CodeDelegateInvokeExpression.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeDelegateInvokeExpression" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeDelegateInvokeExpression.#ctor(System.CodeDom.CodeExpression)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeDelegateInvokeExpression" /> class using the specified target object.</summary>
-      <param name="targetObject">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the target object.</param>
-    </member>
     <member name="M:System.CodeDom.CodeDelegateInvokeExpression.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeExpression[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeDelegateInvokeExpression" /> class using the specified target object and parameters.</summary>
       <param name="targetObject">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the target object.</param>
       <param name="parameters">An array of <see cref="T:System.CodeDom.CodeExpression" /> objects that indicate the parameters.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeDelegateInvokeExpression.#ctor(System.CodeDom.CodeExpression)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeDelegateInvokeExpression" /> class using the specified target object.</summary>
+      <param name="targetObject">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the target object.</param>
     </member>
     <member name="P:System.CodeDom.CodeDelegateInvokeExpression.Parameters">
       <summary>Gets or sets the parameters to pass to the event handling methods attached to the event.</summary>
@@ -1238,14 +1238,14 @@
     <member name="M:System.CodeDom.CodeLabeledStatement.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeLabeledStatement" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeLabeledStatement.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeLabeledStatement" /> class using the specified label name.</summary>
-      <param name="label">The name of the label.</param>
-    </member>
     <member name="M:System.CodeDom.CodeLabeledStatement.#ctor(System.String,System.CodeDom.CodeStatement)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeLabeledStatement" /> class using the specified label name and statement.</summary>
       <param name="label">The name of the label.</param>
       <param name="statement">The <see cref="T:System.CodeDom.CodeStatement" /> to associate with the label.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeLabeledStatement.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeLabeledStatement" /> class using the specified label name.</summary>
+      <param name="label">The name of the label.</param>
     </member>
     <member name="P:System.CodeDom.CodeLabeledStatement.Label">
       <summary>Gets or sets the name of the label.</summary>
@@ -1435,16 +1435,16 @@
     <member name="M:System.CodeDom.CodeMethodReferenceExpression.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeMethodReferenceExpression" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeMethodReferenceExpression.#ctor(System.CodeDom.CodeExpression,System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeMethodReferenceExpression" /> class using the specified target object and method name.</summary>
-      <param name="targetObject">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the object to target.</param>
-      <param name="methodName">The name of the method to call.</param>
-    </member>
     <member name="M:System.CodeDom.CodeMethodReferenceExpression.#ctor(System.CodeDom.CodeExpression,System.String,System.CodeDom.CodeTypeReference[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeMethodReferenceExpression" /> class using the specified target object, method name, and generic type arguments.</summary>
       <param name="targetObject">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the object to target.</param>
       <param name="methodName">The name of the method to call.</param>
       <param name="typeParameters">An array of <see cref="T:System.CodeDom.CodeTypeReference" /> values that specify the <see cref="P:System.CodeDom.CodeMethodReferenceExpression.TypeArguments" /> for this <see cref="T:System.CodeDom.CodeMethodReferenceExpression" />.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeMethodReferenceExpression.#ctor(System.CodeDom.CodeExpression,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeMethodReferenceExpression" /> class using the specified target object and method name.</summary>
+      <param name="targetObject">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the object to target.</param>
+      <param name="methodName">The name of the method to call.</param>
     </member>
     <member name="P:System.CodeDom.CodeMethodReferenceExpression.MethodName">
       <summary>Gets or sets the name of the method to reference.</summary>
@@ -2127,16 +2127,16 @@
     <member name="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor(System.CodeDom.CodeStatement[],System.CodeDom.CodeCatchClause[])">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" /> class using the specified statements for try and catch clauses.</summary>
-      <param name="tryStatements">An array of <see cref="T:System.CodeDom.CodeStatement" /> objects that indicate the statements to try.</param>
-      <param name="catchClauses">An array of <see cref="T:System.CodeDom.CodeCatchClause" /> objects that indicate the clauses to catch.</param>
-    </member>
     <member name="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor(System.CodeDom.CodeStatement[],System.CodeDom.CodeCatchClause[],System.CodeDom.CodeStatement[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" /> class using the specified statements for try, catch clauses, and finally statements.</summary>
       <param name="tryStatements">An array of <see cref="T:System.CodeDom.CodeStatement" /> objects that indicate the statements to try.</param>
       <param name="catchClauses">An array of <see cref="T:System.CodeDom.CodeCatchClause" /> objects that indicate the clauses to catch.</param>
       <param name="finallyStatements">An array of <see cref="T:System.CodeDom.CodeStatement" /> objects that indicate the finally statements to use.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor(System.CodeDom.CodeStatement[],System.CodeDom.CodeCatchClause[])">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" /> class using the specified statements for try and catch clauses.</summary>
+      <param name="tryStatements">An array of <see cref="T:System.CodeDom.CodeStatement" /> objects that indicate the statements to try.</param>
+      <param name="catchClauses">An array of <see cref="T:System.CodeDom.CodeCatchClause" /> objects that indicate the clauses to catch.</param>
     </member>
     <member name="P:System.CodeDom.CodeTryCatchFinallyStatement.CatchClauses">
       <summary>Gets the catch clauses to use.</summary>
@@ -2547,10 +2547,6 @@
       <param name="arrayType">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the type of the array.</param>
       <param name="rank">The number of dimensions in the array.</param>
     </member>
-    <member name="M:System.CodeDom.CodeTypeReference.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeReference" /> class using the specified type name.</summary>
-      <param name="typeName">The name of the type to reference.</param>
-    </member>
     <member name="M:System.CodeDom.CodeTypeReference.#ctor(System.String,System.CodeDom.CodeTypeReference[])">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeReference" /> class using the specified type name and type arguments.</summary>
       <param name="typeName">The name of the type to reference.</param>
@@ -2566,16 +2562,20 @@
       <param name="baseType">The name of the type of the elements of the array.</param>
       <param name="rank">The number of dimensions of the array.</param>
     </member>
-    <member name="M:System.CodeDom.CodeTypeReference.#ctor(System.Type)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeReference" /> class using the specified type.</summary>
-      <param name="type">The <see cref="T:System.Type" /> to reference.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="type" /> is <see langword="null" />.</exception>
+    <member name="M:System.CodeDom.CodeTypeReference.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeReference" /> class using the specified type name.</summary>
+      <param name="typeName">The name of the type to reference.</param>
     </member>
     <member name="M:System.CodeDom.CodeTypeReference.#ctor(System.Type,System.CodeDom.CodeTypeReferenceOptions)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeReference" /> class using the specified type and code type reference.</summary>
       <param name="type">The <see cref="T:System.Type" /> to reference.</param>
       <param name="codeTypeReferenceOption">The code type reference option, one of the <see cref="T:System.CodeDom.CodeTypeReferenceOptions" /> values.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeTypeReference.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeReference" /> class using the specified type.</summary>
+      <param name="type">The <see cref="T:System.Type" /> to reference.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="type" /> is <see langword="null" />.</exception>
     </member>
     <member name="P:System.CodeDom.CodeTypeReference.ArrayElementType">
       <summary>Gets or sets the type of the elements in the array.</summary>
@@ -2712,20 +2712,15 @@
     <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.CodeDom.CodeTypeReference,System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified type and name.</summary>
-      <param name="type">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the data type of the variable.</param>
-      <param name="name">The name of the variable.</param>
-    </member>
     <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.CodeDom.CodeTypeReference,System.String,System.CodeDom.CodeExpression)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified data type, variable name, and initialization expression.</summary>
       <param name="type">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the type of the variable.</param>
       <param name="name">The name of the variable.</param>
       <param name="initExpression">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the initialization expression for the variable.</param>
     </member>
-    <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.String,System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified data type name and variable name.</summary>
-      <param name="type">The name of the data type of the variable.</param>
+    <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.CodeDom.CodeTypeReference,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified type and name.</summary>
+      <param name="type">A <see cref="T:System.CodeDom.CodeTypeReference" /> that indicates the data type of the variable.</param>
       <param name="name">The name of the variable.</param>
     </member>
     <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.String,System.String,System.CodeDom.CodeExpression)">
@@ -2734,9 +2729,9 @@
       <param name="name">The name of the variable.</param>
       <param name="initExpression">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the initialization expression for the variable.</param>
     </member>
-    <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.Type,System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified data type and variable name.</summary>
-      <param name="type">The data type for the variable.</param>
+    <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.String,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified data type name and variable name.</summary>
+      <param name="type">The name of the data type of the variable.</param>
       <param name="name">The name of the variable.</param>
     </member>
     <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.Type,System.String,System.CodeDom.CodeExpression)">
@@ -2744,6 +2739,11 @@
       <param name="type">The data type of the variable.</param>
       <param name="name">The name of the variable.</param>
       <param name="initExpression">A <see cref="T:System.CodeDom.CodeExpression" /> that indicates the initialization expression for the variable.</param>
+    </member>
+    <member name="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.Type,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> class using the specified data type and variable name.</summary>
+      <param name="type">The data type for the variable.</param>
+      <param name="name">The name of the variable.</param>
     </member>
     <member name="P:System.CodeDom.CodeVariableDeclarationStatement.InitExpression">
       <summary>Gets or sets the initialization expression for the variable.</summary>
@@ -2973,6 +2973,12 @@
       <summary>When overridden in a derived class, creates a new code parser.</summary>
       <returns>An <see cref="T:System.CodeDom.Compiler.ICodeParser" /> that can be used to parse source code. The base implementation always returns <see langword="null" />.</returns>
     </member>
+    <member name="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+      <summary>Gets a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> instance for the specified language and provider options.</summary>
+      <param name="language">The language name.</param>
+      <param name="providerOptions">A collection of provider options from the configuration file.</param>
+      <returns>A CodeDOM provider that is implemented for the specified language name and options.</returns>
+    </member>
     <member name="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)">
       <summary>Gets a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> instance for the specified language.</summary>
       <param name="language">The language name.</param>
@@ -2980,12 +2986,6 @@
       <exception cref="T:System.ArgumentNullException">The <paramref name="language" /> is <see langword="null" />.</exception>
       <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
       <returns>A CodeDOM provider that is implemented for the specified language name.</returns>
-    </member>
-    <member name="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
-      <summary>Gets a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> instance for the specified language and provider options.</summary>
-      <param name="language">The language name.</param>
-      <param name="providerOptions">A collection of provider options from the configuration file.</param>
-      <returns>A CodeDOM provider that is implemented for the specified language name and options.</returns>
     </member>
     <member name="M:System.CodeDom.Compiler.CodeDomProvider.CreateValidIdentifier(System.String)">
       <summary>Creates a valid identifier for the specified value.</summary>
@@ -3495,15 +3495,15 @@
       <summary>Generates code for the specified <see cref="T:System.CodeDom.FieldDirection" />.</summary>
       <param name="dir">One of the enumeration values that indicates the attribute of the field.</param>
     </member>
-    <member name="M:System.CodeDom.Compiler.CodeGenerator.OutputExpressionList(System.CodeDom.CodeExpressionCollection)">
-      <summary>Generates code for the specified expression list.</summary>
-      <param name="expressions">The expressions to generate code for.</param>
-    </member>
     <member name="M:System.CodeDom.Compiler.CodeGenerator.OutputExpressionList(System.CodeDom.CodeExpressionCollection,System.Boolean)">
       <summary>Generates code for the specified expression list.</summary>
       <param name="expressions">The expressions to generate code for.</param>
       <param name="newlineBetweenItems">
         <see langword="true" /> to insert a new line after each item; otherwise, <see langword="false" />.</param>
+    </member>
+    <member name="M:System.CodeDom.Compiler.CodeGenerator.OutputExpressionList(System.CodeDom.CodeExpressionCollection)">
+      <summary>Generates code for the specified expression list.</summary>
+      <param name="expressions">The expressions to generate code for.</param>
     </member>
     <member name="M:System.CodeDom.Compiler.CodeGenerator.OutputFieldScopeModifier(System.CodeDom.MemberAttributes)">
       <summary>Outputs a field scope modifier that corresponds to the specified attributes.</summary>
@@ -3925,21 +3925,21 @@
     <member name="M:System.CodeDom.Compiler.CompilerParameters.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> class.</summary>
     </member>
-    <member name="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[])">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> class using the specified assembly names.</summary>
-      <param name="assemblyNames">The names of the assemblies to reference.</param>
-    </member>
-    <member name="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[],System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> class using the specified assembly names and output file name.</summary>
-      <param name="assemblyNames">The names of the assemblies to reference.</param>
-      <param name="outputName">The output file name.</param>
-    </member>
     <member name="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[],System.String,System.Boolean)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> class using the specified assembly names, output name, and a value indicating whether to include debug information.</summary>
       <param name="assemblyNames">The names of the assemblies to reference.</param>
       <param name="outputName">The output file name.</param>
       <param name="includeDebugInformation">
         <see langword="true" /> to include debug information; <see langword="false" /> to exclude debug information.</param>
+    </member>
+    <member name="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[],System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> class using the specified assembly names and output file name.</summary>
+      <param name="assemblyNames">The names of the assemblies to reference.</param>
+      <param name="outputName">The output file name.</param>
+    </member>
+    <member name="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[])">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> class using the specified assembly names.</summary>
+      <param name="assemblyNames">The names of the assemblies to reference.</param>
     </member>
     <member name="P:System.CodeDom.Compiler.CompilerParameters.CompilerOptions">
       <summary>Gets or sets optional command-line arguments to use when invoking the compiler.</summary>
@@ -4288,20 +4288,15 @@
     <member name="M:System.CodeDom.Compiler.TempFileCollection.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.TempFileCollection" /> class with default values.</summary>
     </member>
-    <member name="M:System.CodeDom.Compiler.TempFileCollection.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.TempFileCollection" /> class using the specified temporary directory that is set to delete the temporary files after their generation and use, by default.</summary>
-      <param name="tempDir">A path to the temporary directory to use for storing the temporary files.</param>
-    </member>
     <member name="M:System.CodeDom.Compiler.TempFileCollection.#ctor(System.String,System.Boolean)">
       <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.TempFileCollection" /> class using the specified temporary directory and specified value indicating whether to keep or delete the temporary files after their generation and use, by default.</summary>
       <param name="tempDir">A path to the temporary directory to use for storing the temporary files.</param>
       <param name="keepFiles">
         <see langword="true" /> if the temporary files should be kept after use; <see langword="false" /> if the temporary files should be deleted.</param>
     </member>
-    <member name="M:System.CodeDom.Compiler.TempFileCollection.AddExtension(System.String)">
-      <summary>Adds a file name with the specified file name extension to the collection.</summary>
-      <param name="fileExtension">The file name extension for the auto-generated temporary file name to add to the collection.</param>
-      <returns>A file name with the specified extension that was just added to the collection.</returns>
+    <member name="M:System.CodeDom.Compiler.TempFileCollection.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.CodeDom.Compiler.TempFileCollection" /> class using the specified temporary directory that is set to delete the temporary files after their generation and use, by default.</summary>
+      <param name="tempDir">A path to the temporary directory to use for storing the temporary files.</param>
     </member>
     <member name="M:System.CodeDom.Compiler.TempFileCollection.AddExtension(System.String,System.Boolean)">
       <summary>Adds a file name with the specified file name extension to the collection, using the specified value indicating whether the file should be deleted or retained.</summary>
@@ -4312,16 +4307,21 @@
         <paramref name="fileExtension" /> is <see langword="null" /> or an empty string.</exception>
       <returns>A file name with the specified extension that was just added to the collection.</returns>
     </member>
+    <member name="M:System.CodeDom.Compiler.TempFileCollection.AddExtension(System.String)">
+      <summary>Adds a file name with the specified file name extension to the collection.</summary>
+      <param name="fileExtension">The file name extension for the auto-generated temporary file name to add to the collection.</param>
+      <returns>A file name with the specified extension that was just added to the collection.</returns>
+    </member>
     <member name="M:System.CodeDom.Compiler.TempFileCollection.AddFile(System.String,System.Boolean)">
       <summary>Adds the specified file to the collection, using the specified value indicating whether to keep the file after the collection is disposed or when the <see cref="M:System.CodeDom.Compiler.TempFileCollection.Delete" /> method is called.</summary>
       <param name="fileName">The name of the file to add to the collection.</param>
       <param name="keepFile">
         <see langword="true" /> if the file should be kept after use; <see langword="false" /> if the file should be deleted.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="fileName" /> is <see langword="null" /> or an empty string.  
-  
- -or-  
-  
+        <paramref name="fileName" /> is <see langword="null" /> or an empty string.
+
+ -or-
+
  <paramref name="fileName" /> is a duplicate.</exception>
     </member>
     <member name="M:System.CodeDom.Compiler.TempFileCollection.CopyTo(System.String[],System.Int32)">

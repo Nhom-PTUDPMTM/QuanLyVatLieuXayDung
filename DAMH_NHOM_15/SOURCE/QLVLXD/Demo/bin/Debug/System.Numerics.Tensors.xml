@@ -6,6 +6,7 @@
     <members>
         <member name="T:System.Numerics.Tensors.TensorPrimitives">
             <summary>Performs primitive tensor operations over spans of memory.</summary>
+            <summary>Performs primitive tensor operations over spans of memory.</summary>
         </member>
         <member name="M:System.Numerics.Tensors.TensorPrimitives.Abs(System.ReadOnlySpan{System.Single},System.Span{System.Single})">
             <summary>Computes the element-wise absolute value of each single-precision floating-point number in the specified tensor.</summary>
@@ -560,7 +561,7 @@
             </remarks>
         </member>
         <member name="M:System.Numerics.Tensors.TensorPrimitives.MultiplyAdd(System.ReadOnlySpan{System.Single},System.ReadOnlySpan{System.Single},System.ReadOnlySpan{System.Single},System.Span{System.Single})">
-            <summary>Computes the element-wise result of <c>(<paramref name="x" /> * <paramref name="y" />) * <paramref name="addend" /></c> for the specified tensors of single-precision floating-point numbers.</summary>
+            <summary>Computes the element-wise result of <c>(<paramref name="x" /> * <paramref name="y" />) + <paramref name="addend" /></c> for the specified tensors of single-precision floating-point numbers.</summary>
             <param name="x">The first tensor, represented as a span.</param>
             <param name="y">The second tensor, represented as a span.</param>
             <param name="addend">The third tensor, represented as a span.</param>
@@ -580,7 +581,7 @@
             </remarks>
         </member>
         <member name="M:System.Numerics.Tensors.TensorPrimitives.MultiplyAdd(System.ReadOnlySpan{System.Single},System.ReadOnlySpan{System.Single},System.Single,System.Span{System.Single})">
-            <summary>Computes the element-wise result of <c>(<paramref name="x" /> * <paramref name="y" />) * <paramref name="addend" /></c> for the specified tensors of single-precision floating-point numbers.</summary>
+            <summary>Computes the element-wise result of <c>(<paramref name="x" /> * <paramref name="y" />) + <paramref name="addend" /></c> for the specified tensors of single-precision floating-point numbers.</summary>
             <param name="x">The first tensor, represented as a span.</param>
             <param name="y">The second tensor, represented as a span.</param>
             <param name="addend">The third tensor, represented as a scalar.</param>
@@ -600,7 +601,7 @@
             </remarks>
         </member>
         <member name="M:System.Numerics.Tensors.TensorPrimitives.MultiplyAdd(System.ReadOnlySpan{System.Single},System.Single,System.ReadOnlySpan{System.Single},System.Span{System.Single})">
-            <summary>Computes the element-wise result of <c>(<paramref name="x" /> * <paramref name="y" />) * <paramref name="addend" /></c> for the specified tensors of single-precision floating-point numbers.</summary>
+            <summary>Computes the element-wise result of <c>(<paramref name="x" /> * <paramref name="y" />) + <paramref name="addend" /></c> for the specified tensors of single-precision floating-point numbers.</summary>
             <param name="x">The first tensor, represented as a span.</param>
             <param name="y">The second tensor, represented as a scalar.</param>
             <param name="addend">The third tensor, represented as a span.</param>
@@ -883,10 +884,53 @@
             </para>
             </remarks>
         </member>
-        <member name="M:System.Numerics.Tensors.TensorPrimitives.ValidateInputOutputSpanNonOverlapping(System.ReadOnlySpan{System.Single},System.Span{System.Single})">
+        <member name="M:System.Numerics.Tensors.TensorPrimitives.ValidateInputOutputSpanNonOverlapping``1(System.ReadOnlySpan{``0},System.Span{``0})">
             <summary>Throws an exception if the <paramref name="input"/> and <paramref name="output"/> spans overlap and don't begin at the same memory location.</summary>
         </member>
-        <member name="P:System.Numerics.Tensors.TensorPrimitives.AlignmentUInt32Mask_16x16">
+        <member name="M:System.Numerics.Tensors.TensorPrimitives.ThrowNegateTwosCompOverflow">
+            <summary>Throws an <see cref="T:System.OverflowException"/> for trying to negate the minimum value of a two-complement value.</summary>
+        </member>
+        <member name="M:System.Numerics.Tensors.TensorPrimitives.Rename``2(System.Span{``0})">
+            <summary>Creates a span of <typeparamref name="TTo"/> from a <typeparamref name="TFrom"/> when they're the same type.</summary>
+            <remarks>
+            This is the same as MemoryMarshal.Cast, except only to be used when TFrom and TTo are the same type or effectively
+            the same type (e.g. int and nint in a 32-bit process). MemoryMarshal.Cast can't currently be used as it's
+            TFrom/TTo are constrained to be value types.
+            </remarks>
+        </member>
+        <member name="M:System.Numerics.Tensors.TensorPrimitives.Rename``2(System.ReadOnlySpan{``0})">
+            <summary>Creates a span of <typeparamref name="TTo"/> from a <typeparamref name="TFrom"/> when they're the same type.</summary>
+            <remarks>
+            This is the same as MemoryMarshal.Cast, except only to be used when TFrom and TTo are the same type or effectively
+            the same type (e.g. int and nint in a 32-bit process). MemoryMarshal.Cast can't currently be used as it's
+            TFrom/TTo are constrained to be value types.
+            </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.AlignmentByteMask_64x65">
+             <summary>Mask used to handle alignment elements before vectorized handling of the input.</summary>
+             <remarks>
+             Logically 64 rows of 64 bytes. The Nth row should be used to handle N alignment elements at the
+             beginning of the input, where elements in the vector after that will be zero'd.
+            
+             There actually exists 65 rows in the table with the last row being a repeat of the first. This is
+             done because it allows the main algorithms to use a simplified algorithm when computing the amount
+             of misalignment where we always skip the first 64 elements, even if already aligned, so we don't
+             double process them. This allows us to avoid an additional branch.
+             </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.AlignmentUInt16Mask_32x33">
+             <summary>Mask used to handle alignment elements before vectorized handling of the input.</summary>
+             <remarks>
+             Logically 32 rows of 32 uints. The Nth row should be used to handle N alignment elements at the
+             beginning of the input, where elements in the vector after that will be zero'd.
+            
+             There actually exists 33 rows in the table with the last row being a repeat of the first. This is
+             done because it allows the main algorithms to use a simplified algorithm when computing the amount
+             of misalignment where we always skip the first 32 elements, even if already aligned, so we don't
+             double process them. This allows us to avoid an additional branch.
+             </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.AlignmentUInt32Mask_16x17">
              <summary>Mask used to handle alignment elements before vectorized handling of the input.</summary>
              <remarks>
              Logically 16 rows of 16 uints. The Nth row should be used to handle N alignment elements at the
@@ -898,7 +942,41 @@
              double process them. This allows us to avoid an additional branch.
              </remarks>
         </member>
-        <member name="P:System.Numerics.Tensors.TensorPrimitives.RemainderUInt32Mask_16x16">
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.AlignmentUInt64Mask_8x9">
+             <summary>Mask used to handle alignment elements before vectorized handling of the input.</summary>
+             <remarks>
+             Logically 8 rows of 8 ulongs. The Nth row should be used to handle N alignment elements at the
+             beginning of the input, where elements in the vector after that will be zero'd.
+            
+             There actually exists 9 rows in the table with the last row being a repeat of the first. This is
+             done because it allows the main algorithms to use a simplified algorithm when computing the amount
+             of misalignment where we always skip the first 8 elements, even if already aligned, so we don't
+             double process them. This allows us to avoid an additional branch.
+             </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.RemainderByteMask_64x65">
+             <summary>Mask used to handle remaining elements after vectorized handling of the input.</summary>
+             <remarks>
+             Logically 64 rows of 64 ushorts. The Nth row should be used to handle N remaining elements at the
+             end of the input, where elements in the vector prior to that will be zero'd.
+            
+             Much as with the AlignmentMask table, we actually have 65 rows where the last row is a repeat of
+             the first. Doing this allows us to avoid an additional branch and instead to always process the
+             last 16 elements via a conditional select instead.
+             </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.RemainderUInt16Mask_32x33">
+             <summary>Mask used to handle remaining elements after vectorized handling of the input.</summary>
+             <remarks>
+             Logically 32 rows of 32 ushorts. The Nth row should be used to handle N remaining elements at the
+             end of the input, where elements in the vector prior to that will be zero'd.
+            
+             Much as with the AlignmentMask table, we actually have 33 rows where the last row is a repeat of
+             the first. Doing this allows us to avoid an additional branch and instead to always process the
+             last 16 elements via a conditional select instead.
+             </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.RemainderUInt32Mask_16x17">
              <summary>Mask used to handle remaining elements after vectorized handling of the input.</summary>
              <remarks>
              Logically 16 rows of 16 uints. The Nth row should be used to handle N remaining elements at the
@@ -907,6 +985,17 @@
              Much as with the AlignmentMask table, we actually have 17 rows where the last row is a repeat of
              the first. Doing this allows us to avoid an additional branch and instead to always process the
              last 16 elements via a conditional select instead.
+             </remarks>
+        </member>
+        <member name="P:System.Numerics.Tensors.TensorPrimitives.RemainderUInt64Mask_8x9">
+             <summary>Mask used to handle remaining elements after vectorized handling of the input.</summary>
+             <remarks>
+             Logically 8 rows of 8 ulongs. The Nth row should be used to handle N remaining elements at the
+             end of the input, where elements in the vector prior to that will be zero'd.
+            
+             Much as with the AlignmentMask table, we actually have 9 rows where the last row is a repeat of
+             the first. Doing this allows us to avoid an additional branch and instead to always process the
+             last 8 elements via a conditional select instead.
              </remarks>
         </member>
         <member name="M:System.Numerics.Tensors.TensorPrimitives.CosineSimilarityCore(System.ReadOnlySpan{System.Single},System.ReadOnlySpan{System.Single})">
@@ -1039,85 +1128,85 @@
             and zero for all other elements.
             </summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.AddOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.AddOperator_Single">
             <summary>x + y</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.SubtractOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.SubtractOperator_Single">
             <summary>x - y</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.SubtractSquaredOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.SubtractSquaredOperator_Single">
             <summary>(x - y) * (x - y)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MultiplyOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MultiplyOperator_Single">
             <summary>x * y</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.DivideOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.DivideOperator_Single">
             <summary>x / y</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.IndexOfMaxOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.IndexOfMaxOperator_Single">
             <summary>Returns the index of MathF.Max(x, y)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxOperator_Single">
             <summary>MathF.Max(x, y) (but without guaranteed NaN propagation)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxPropagateNaNOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxPropagateNaNOperator_Single">
             <summary>MathF.Max(x, y)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxMagnitudeOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxMagnitudeOperator_Single">
             <summary>Operator to get x or y based on which has the larger MathF.Abs (but NaNs may not be propagated)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxMagnitudePropagateNaNOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MaxMagnitudePropagateNaNOperator_Single">
             <summary>Operator to get x or y based on which has the larger MathF.Abs</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinOperator_Single">
             <summary>MathF.Min(x, y) (but NaNs may not be propagated)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinPropagateNaNOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinPropagateNaNOperator_Single">
             <summary>MathF.Min(x, y)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinMagnitudeOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinMagnitudeOperator_Single">
             <summary>Operator to get x or y based on which has the smaller MathF.Abs (but NaNs may not be propagated)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinMagnitudePropagateNaNOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MinMagnitudePropagateNaNOperator_Single">
             <summary>Operator to get x or y based on which has the smaller MathF.Abs</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.NegateOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.NegateOperator_Single">
             <summary>-x</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.AddMultiplyOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.AddMultiplyOperator_Single">
             <summary>(x + y) * z</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.MultiplyAddOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.MultiplyAddOperator_Single">
             <summary>(x * y) + z</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.IdentityOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.IdentityOperator_Single">
             <summary>x</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.SquaredOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.SquaredOperator_Single">
             <summary>x * x</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.AbsoluteOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.AbsoluteOperator_Single">
             <summary>MathF.Abs(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.ExpOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.ExpOperator_Single">
             <summary>MathF.Exp(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.SinhOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.SinhOperator_Single">
             <summary>MathF.Sinh(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.CoshOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.CoshOperator_Single">
             <summary>MathF.Cosh(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.TanhOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.TanhOperator_Single">
             <summary>MathF.Tanh(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.LogOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.LogOperator_Single">
             <summary>MathF.Log(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.Log2Operator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.Log2Operator_Single">
             <summary>MathF.Log2(x)</summary>
         </member>
-        <member name="T:System.Numerics.Tensors.TensorPrimitives.SigmoidOperator">
+        <member name="T:System.Numerics.Tensors.TensorPrimitives.SigmoidOperator_Single">
             <summary>1f / (1f + MathF.Exp(-x))</summary>
         </member>
         <member name="T:System.Numerics.Tensors.TensorPrimitives.IUnaryOperator">
@@ -1143,6 +1232,108 @@
         </member>
         <member name="P:System.SR.Argument_InputAndDestinationSpanMustNotOverlap">
             <summary>The destination span may only overlap with an input span if the two spans start at the same memory location.</summary>
+        </member>
+        <member name="P:System.SR.Overflow_NegateTwosCompNum">
+            <summary>Negating the minimum value of a twos complement number is invalid.</summary>
+        </member>
+        <member name="P:System.SR.Argument_InvalidEnumValue">
+            <summary>The value '{0}' is not valid for this usage of the type {1}.</summary>
+        </member>
+        <member name="P:System.SR.Argument_InvalidTypeWithPointersNotSupported">
+            <summary>Cannot use type '{0}'. Only value types without pointers or references are supported.</summary>
+        </member>
+        <member name="P:System.SR.DestinationTooShort">
+            <summary>Destination is too short.</summary>
+        </member>
+        <member name="P:System.SR.NotSupported_CannotCallEqualsOnSpan">
+            <summary>Equals() on TensorSpan and ReadOnlyTensorSpan is not supported. Use operator== instead.</summary>
+        </member>
+        <member name="P:System.SR.NotSupported_CannotCallGetHashCodeOnSpan">
+            <summary>GetHashCode() on TensorSpan and ReadOnlyTensorSpan is not supported.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_IndicesLengthMustEqualRank">
+            <summary>Number of Indices must equal the rank of the TensorSpan.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_LengthsMustEqualArrayLength">
+            <summary>The total length specified by the lengths must equal the length of the array.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_1DTensorRequired">
+            <summary>Must be a 1d tensor</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_AxisLargerThanRank">
+            <summary>Cannot select an axis greater than the current Rank</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_ConcatenateTooFewTensors">
+            <summary>Must provide at least 2 tensors to Concatenate</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_DimensionsNotSame">
+            <summary>Number of dimensions to slice does not equal the number of dimensions in the span</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_FilterTensorMustEqualTensorLength">
+            <summary>The total length of the filter tensor must equal the length of the tensor to be filtered.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_IncorrectNumberOfFilterItems">
+            <summary>Number of elements provided does not match the number of filters.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_InPlaceInvalidShape">
+            <summary>In place operations require the same shape for both tensors</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_InvalidAxis">
+            <summary>Invalid axis provided. Must be greater then or equal to 0 and less than the tensor rank.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_InvalidConcatenateShape">
+            <summary>The tensors must have the same shape, except in the dimension corresponding to axis.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_InvalidReshapeDimensions">
+            <summary>Provided dimensions are not valid for reshaping</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_InvalidSqueezeAxis">
+            <summary>Cannot select an axis to squeeze which has size not equal to one</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_OnlyOneWildcard">
+            <summary>Provided dimensions can only include 1 wildcard.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_PermuteAxisOrder">
+            <summary>Must provide an axis order for each axis</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_SetSliceInvalidShapes">
+            <summary>Provided values must have the same shape as the input tensor.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_SetSliceNoRange">
+            <summary>When no ranges are specified the values tensor must be equal in size as the input tensor.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_LengthsNotBroadcastCompatible">
+            <summary>Lengths are not broadcast compatible.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_SplitNotSplitEvenly">
+            <summary>The number of splits must perfectly divide the dimension.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_StackTooFewTensors">
+            <summary>Must provide at least 2 tensors to Stack.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_TransposeTooFewDimensions">
+            <summary>Must provide a tensor with at least 2 dimensions to transpose it.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_ValueNonNegative">
+            <summary>The provided value must be non-negative.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_InvalidStridesAndLengths">
+            <summary>The provided lengths and strides would allow you to access elements outside the provided memory.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_StrideLessThan0">
+            <summary>Strides cannot be less than 0.</summary>
+        </member>
+        <member name="P:System.SR.Argument_2DTensorRequired">
+            <summary>Must be a 2d Tensor.</summary>
+        </member>
+        <member name="P:System.SR.Argument_IncompatibleDimensions">
+            <summary>Incompatible dimensions for provided tensors. left.Lengths[1] == {0} while right.Lengths[1] == {1}.</summary>
+        </member>
+        <member name="P:System.SR.ThrowArgument_StackShapesNotSame">
+            <summary>All tensors must have the same shape.</summary>
+        </member>
+        <member name="P:System.SR.Argument_CannotReshapeNonContiguousOrDense">
+            <summary>The Tensor provided is either non-contiguous or non-dense. Reshape only works with contigous and dense memory. You may need to Broadcast or Copy the data to be contigous.</summary>
         </member>
         <member name="T:System.Runtime.InteropServices.LibraryImportAttribute">
             <summary>
@@ -1202,7 +1393,7 @@
         </member>
         <member name="F:System.Runtime.InteropServices.StringMarshalling.Custom">
             <summary>
-            Indicates the user is suppling a specific marshaller in <see cref="P:System.Runtime.InteropServices.LibraryImportAttribute.StringMarshallingCustomType"/>.
+            Indicates the user is supplying a specific marshaller in <see cref="P:System.Runtime.InteropServices.LibraryImportAttribute.StringMarshallingCustomType"/>.
             </summary>
         </member>
         <member name="F:System.Runtime.InteropServices.StringMarshalling.Utf8">
@@ -1303,7 +1494,7 @@
         <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String)">
             <summary>Initializes the attribute with the specified return value condition and a field or property member.</summary>
             <param name="returnValue">
-            The return value condition. If the method returns this value, the associated parameter will not be null.
+            The return value condition. If the method returns this value, the associated field or property member will not be null.
             </param>
             <param name="member">
             The field or property member that is promised to be not-null.
@@ -1312,7 +1503,7 @@
         <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
             <summary>Initializes the attribute with the specified return value condition and list of field and property members.</summary>
             <param name="returnValue">
-            The return value condition. If the method returns this value, the associated parameter will not be null.
+            The return value condition. If the method returns this value, the associated field and property members will not be null.
             </param>
             <param name="members">
             The list of field and property members that are promised to be not-null.

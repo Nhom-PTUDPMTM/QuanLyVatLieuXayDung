@@ -189,7 +189,7 @@
             // 
             // dgvData
             // 
-            this.dgvData.DataSource = typeof(DAL.KhachHang);
+            this.dgvData.DataSource = typeof(DTO.KhachHang);
             this.dgvData.Location = new System.Drawing.Point(15, 221);
             this.dgvData.MainView = this.gridView1;
             this.dgvData.Name = "dgvData";

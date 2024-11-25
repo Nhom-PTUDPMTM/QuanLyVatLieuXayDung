@@ -34,7 +34,7 @@ namespace Demo
         public DataTable GetDatabase(string pServer, string pUser, string pPass)
         {
             DataTable dt = new DataTable();
-            pServer = pServer.Trim() + "\\SQLEXPRESS";
+            //pServer = pServer.Trim() + "\\SQLEXPRESS";
             string connectionString = $"Data Source={pServer}; Initial Catalog=master; User ID={pUser}; pwd={pPass}";
             SqlDataAdapter adapter = new SqlDataAdapter("select name from sys.Databases", connectionString);
             adapter.Fill(dt);
@@ -43,7 +43,7 @@ namespace Demo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string server = cboServerName.Text.Trim() + "\\SQLEXPRESS";
+            string server = cboServerName.Text.Trim();
             string database = cboDatabase.Text;
             string username = txtUsername.Text;
             string password = txtPassword.Text;
