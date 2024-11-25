@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ML.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,17 @@ namespace DAL
     //Ánh xạ từ cơ sở dữ liệu
     public class DonHangDTO
     {
+        [LoadColumn(0)]
         public string MaKH { get; set; }
+
+        [LoadColumn(1)]
         public string MaHH { get; set; }
-        public int SLXuat { get; set; }
+
+        [LoadColumn(2)]
+        public float SLXuat { get; set; }
+
+        [LoadColumn(3)]
         public DateTime NgayXuat { get; set; }
     }
+
 }
